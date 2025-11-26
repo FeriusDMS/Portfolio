@@ -1,0 +1,31 @@
+<section class="skills section" id="skills">
+  <div class="container">
+    <h2 class="section-title">Compétences Techniques</h2>
+    <p class="section-subtitle">
+      Technologies et outils que j'utilise au quotidien
+    </p>
+    
+    <div class="skills-container">
+      @for (category of categorizedSkills; track category.name) {
+        <div class="skill-category">
+          <h3 class="category-title">{{ category.name }}</h3>
+          
+          <div class="skills-list">
+            @for (skill of category.skills; track skill.name) {
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-percentage">{{ skill.level }}%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" [style.width.%]="skill.level"></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
