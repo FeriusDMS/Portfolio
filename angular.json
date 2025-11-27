@@ -23,6 +23,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "baseHref": "/Portfolio/",
             "assets": [
               {
                 "glob": "**/*",
@@ -32,11 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "outputPath": "dist/portfolio",
+            "index": "src/index.html",
+            "outputMode": "static"
           },
           "configurations": {
             "production": {
