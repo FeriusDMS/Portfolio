@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
@@ -11,5 +11,22 @@ import { TranslationService } from '../../services/translation.service';
 export class Footer {
   currentYear = new Date().getFullYear();
   
-  constructor(public translate: TranslationService) {}
+  constructor(
+    public translate: TranslationService,
+    private router: Router
+  ) {}
+
+  scrollToTop(event?: Event) {
+    if (event) {
+      event.preventDefault();
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  navigateHome(event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
