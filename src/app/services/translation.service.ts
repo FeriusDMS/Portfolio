@@ -201,6 +201,8 @@ export class TranslationService {
     // Contact
     'contact.title': { fr: 'Contactez-moi', en: 'Contact Me' },
     'contact.subtitle': { fr: 'Une question ? Un projet ? N\'hésitez pas à me contacter', en: 'A question? A project? Feel free to contact me' },
+    'contact.keepInTouch': { fr: 'Restons en Contact', en: 'Let\'s Stay in Touch' },
+    'contact.openToDiscuss': { fr: 'Je suis toujours ouvert à discuter de nouveaux projets, d\'idées créatives ou d\'opportunités de collaboration.', en: 'I am always open to discussing new projects, creative ideas or collaboration opportunities.' },
     'contact.name': { fr: 'Nom', en: 'Name' },
     'contact.email': { fr: 'Email', en: 'Email' },
     'contact.subject': { fr: 'Sujet', en: 'Subject' },
