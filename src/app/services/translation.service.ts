@@ -76,6 +76,12 @@ export class TranslationService {
     'projects.zappy.title': { fr: 'Zappy', en: 'Zappy' },
     'projects.zappy.desc': { fr: 'Création d\'une civilisation devant survivre et évoluer. Projet de simulation multi-agents avec IA.', en: 'Creation of a civilization that must survive and evolve. Multi-agent simulation project with AI.' },
     
+    // Project Detail
+    'projectDetail.about': { fr: 'À propos du projet', en: 'About the project' },
+    'projectDetail.technologies': { fr: 'Technologies utilisées', en: 'Technologies used' },
+    'projectDetail.repository': { fr: 'Dépôt GitHub', en: 'GitHub Repository' },
+    'projectDetail.backToProjects': { fr: 'Retour aux projets', en: 'Back to projects' },
+    
     // Skills
     'skills.title': { fr: 'Compétences Techniques', en: 'Technical Skills' },
     'skills.subtitle': { fr: 'Technologies et outils que j\'utilise au quotidien', en: 'Technologies and tools I use daily' },
