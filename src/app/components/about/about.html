@@ -1,6 +1,6 @@
 <section class="about section" id="about">
   <div class="container">
-    <h2 class="section-title">À Propos de Moi</h2>
+    <h2 class="section-title">{{ translate.translate('about.title') }}</h2>
     
     <div class="about-content">
       <div class="about-image">
@@ -13,62 +13,49 @@
       </div>
       
       <div class="about-text">
-        <h3>Étudiant & Développeur Passionné</h3>
+        <h3>{{ translate.translate('about.subtitle') }}</h3>
         <p class="intro">
-          Salut ! 👋 Je suis Andrea, étudiant en 5ème année à <strong>EPITECH Rennes</strong>. 
-          Passionné par l'<strong>Intelligence Artificielle</strong>, le <strong>Machine Learning</strong> 
-          et le développement de jeux vidéo, j'aime créer des projets innovants qui mélangent 
-          créativité et technique. Que ce soit entraîner des modèles d'IA, créer des mods pour 
-          <strong>FFXIV</strong> ou développer des applications web, j'adore transformer 
-          des idées en réalité.
+          {{ translate.translate('about.intro') }}
         </p>
         
         <div class="about-section">
-          <h4>🎓 Mon Parcours</h4>
+          <h4>{{ translate.translate('about.journey.title') }}</h4>
           <p>
-            Durant mes années à <strong>EPITECH</strong>, j'ai eu la chance de partir 1 an à l'étranger 
-            aux <strong>Pays-Bas</strong> (HZ University) pour explorer le monde de l'Intelligence Artificielle 
-            et du Deep Learning. J'ai aussi eu l'opportunité de travailler sur des projets professionnels 
-            lors de stages chez <strong>ADESIO</strong> et <strong>ARCHE MC2</strong>, où j'ai pu mettre 
-            en pratique mes compétences en développement.
+            {{ translate.translate('about.journey.part1') }}<a routerLink="/schools/epitech" class="school-link">{{ translate.translate('about.journey.epitech') }}</a>{{ translate.translate('about.journey.part2') }}<a routerLink="/schools/hz" class="school-link">{{ translate.translate('about.journey.hz') }}</a>{{ translate.translate('about.journey.part3') }}<a routerLink="/companies/adesio" class="school-link">{{ translate.translate('about.journey.adesio') }}</a>{{ translate.translate('about.journey.part4') }}<a routerLink="/companies/arche" class="school-link">{{ translate.translate('about.journey.arche') }}</a>{{ translate.translate('about.journey.part5') }}
           </p>
         </div>
         
         <div class="about-section">
-          <h4>💡 Ce que j'aime faire</h4>
+          <h4>{{ translate.translate('about.passion.title') }}</h4>
           <p>
-            Je suis du genre à me lancer dans des projets variés : du <strong>Machine Learning</strong> et 
-            <strong>NLP</strong> à la création de <strong>mods pour FFXIV</strong>, en passant par le 
-            développement de jeux vidéo et d'applications web. J'aime particulièrement expérimenter avec 
-            de nouvelles technologies d'IA, analyser des données et créer des solutions innovantes. 
-            Toujours en train d'explorer de nouvelles techniques et de créer des projets passionnants !
+            {{ translate.translate('about.passion.text') }}
           </p>
         </div>
         
         <div class="about-section">
-          <h4>🎮 Centres d'Intérêt</h4>
+          <h4>{{ translate.translate('about.interests.title') }}</h4>
           <div class="interests-grid">
             <div class="interest-item">
               <span class="interest-icon">🤖</span>
-              <span>IA & Machine Learning</span>
+              <span>{{ translate.translate('about.interests.ai') }}</span>
             </div>
             <div class="interest-item">
               <span class="interest-icon">🎮</span>
-              <span>Jeux Vidéo & Modding</span>
+              <span>{{ translate.translate('about.interests.games') }}</span>
             </div>
             <div class="interest-item">
               <span class="interest-icon">📊</span>
-              <span>Data Science</span>
+              <span>{{ translate.translate('about.interests.data') }}</span>
             </div>
             <div class="interest-item">
               <span class="interest-icon">🔬</span>
-              <span>Innovation Tech</span>
+              <span>{{ translate.translate('about.interests.innovation') }}</span>
             </div>
           </div>
         </div>
         
         <div class="about-section">
-          <h4>🚀 Stack Technique</h4>
+          <h4>{{ translate.translate('about.stack.title') }}</h4>
           <div class="skills-tags">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">Machine Learning</span>
@@ -87,15 +74,15 @@
         <div class="about-stats">
           <div class="stat-item">
             <span class="stat-number">15+</span>
-            <span class="stat-label">Projets Réalisés</span>
+            <span class="stat-label">{{ translate.translate('about.stats.projects') }}</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">8+</span>
-            <span class="stat-label">Technologies Maîtrisées</span>
+            <span class="stat-label">{{ translate.translate('about.stats.technologies') }}</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">3+</span>
-            <span class="stat-label">Années d'Expérience</span>
+            <span class="stat-label">{{ translate.translate('about.stats.experience') }}</span>
           </div>
         </div>
       </div>

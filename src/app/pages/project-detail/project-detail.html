@@ -1,0 +1,96 @@
+<div class="project-detail">
+  @if (project) {
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a routerLink="/">{{ translate.translate('nav.home') }}</a>
+        <span class="separator">/</span>
+        <a routerLink="/projects">{{ translate.translate('nav.projects') }}</a>
+        <span class="separator">/</span>
+        <span class="current">{{ translate.translate(project.titleKey) }}</span>
+      </div>
+
+      <!-- Header avec image -->
+      <div class="detail-header">
+        <div class="header-image" [style.background-image]="project.image ? 'url(' + project.image + ')' : ''">
+          <div class="header-overlay">
+            <span class="project-type-badge">
+              {{ project.type === 'personal' ? '🚀 ' + translate.translate('projects.personal') : '📚 ' + translate.translate('projects.academic') }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="header-content">
+          <h1 class="project-title">{{ translate.translate(project.titleKey) }}</h1>
+          <p class="project-description">{{ translate.translate(project.descriptionKey) }}</p>
+          
+          <div class="project-meta">
+            <span class="project-date">📅 {{ translate.translate(project.dateKey) }}</span>
+            <div class="tech-stack">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-badge">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section détails -->
+      <div class="detail-content">
+        <div class="content-section">
+          <h2>{{ translate.translate('projectDetail.about') }}</h2>
+          <p>{{ translate.translate(project.descriptionKey) }}</p>
+        </div>
+
+        <div class="content-section">
+          <h2>🎯 {{ translate.translate('projectDetail.objective') }}</h2>
+          <p>{{ translate.translate(project.objectiveKey) }}</p>
+        </div>
+
+        <div class="content-section">
+          <h2>⚡ {{ translate.translate('projectDetail.challenges') }}</h2>
+          <p>{{ translate.translate(project.challengesKey) }}</p>
+        </div>
+
+        <div class="content-section">
+          <h2>✨ {{ translate.translate('projectDetail.results') }}</h2>
+          <p>{{ translate.translate(project.resultsKey) }}</p>
+        </div>
+
+        <div class="content-section">
+          <h2>{{ translate.translate('projectDetail.technologies') }}</h2>
+          <div class="tech-list">
+            @for (tech of project.technologies; track tech) {
+              <div class="tech-item">
+                <span class="tech-icon">💻</span>
+                <span>{{ tech }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        @if (project.github) {
+          <div class="content-section">
+            <h2>{{ translate.translate('projectDetail.repository') }}</h2>
+            <a [href]="project.github" target="_blank" class="repo-link">
+              {{ project.github }}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+        }
+      </div>
+
+      <!-- Bouton retour -->
+      <div class="back-section">
+        <a routerLink="/projects" class="btn btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          {{ translate.translate('projectDetail.backToProjects') }}
+        </a>
+      </div>
+    </div>
+  }
+</div>

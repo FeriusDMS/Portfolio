@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { TranslationService } from '../../services/translation.service';
 
 interface Project {
   title: string;
@@ -13,59 +15,87 @@ interface Project {
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
 export class Projects {
-  projects: Project[] = [
-    {
-      title: 'HPTarget - Mod FFXIV',
-      description: 'Mod pour Final Fantasy XIV permettant d\'améliorer l\'expérience de jeu avec des fonctionnalités personnalisées.',
-      technologies: ['C#', 'Game Modding', 'FFXIV'],
-      image: '',
-      github: 'https://github.com/FeriusDMS/HPTarget',
-      type: 'personal'
-    },
-    {
-      title: 'IA ChatBot (Python)',
-      description: 'Création d\'une intelligence artificielle conversationnelle capable de dialoguer de manière naturelle avec les utilisateurs.',
-      technologies: ['Python', 'NLP', 'Machine Learning'],
-      image: '',
-      github: 'https://github.com/FeriusDMS/Bot-Wulfing',
-      type: 'academic'
-    },
-    {
-      title: 'Application Web & Mobile - Services',
-      description: 'Application complète offrant des connexions à divers services (Spotify, Discord, Google). Interface web et mobile.',
-      technologies: ['JavaScript', 'React', 'Node.js', 'API'],
-      image: '',
-      github: 'https://github.com/FeriusDMS/Area',
-      type: 'academic'
-    },
-    {
-      title: 'My_RPG',
-      description: 'Création d\'un jeu vidéo de type RPG avec système de combat, quêtes et progression du personnage.',
-      technologies: ['C/C++', 'CSFML', 'Game Dev'],
-      image: '',
-      github: 'https://github.com/FeriusDMS/myRPG',
-      type: 'academic'
-    },
-    {
-      title: 'Type - Space Invaders',
-      description: 'Recréation du jeu Space Invaders jouable sur plusieurs plateformes en réseau.',
-      technologies: ['C++', 'Network', 'Game Dev'],
-      image: '',
-      github: 'https://github.com/FeriusDMS/R-Type',
-      type: 'academic'
-    },
-    {
-      title: 'Legacy project',
-      description: 'AWKWARD LEGACY is a restored software suite originally developed between 1995 and 2008 in OCaml, now modernized with a Python backend and Angular 17 frontend. This genealogical research tool is capable of revealing the origins of individuals and uncovering rightful heirs of powerful lineages.',
-      technologies: ['Angular', 'Network', 'Web Dev'],
-      image: '',
-      github: 'https://github.com/FeriusDMS/LegacyProject',
-      type: 'academic'
-    },
-  ];
+  constructor(public translate: TranslationService) {}
+
+  get projects(): Project[] {
+    return [
+      {
+        title: this.translate.translate('projects.computerVision.title'),
+        description: this.translate.translate('projects.computerVision.desc'),
+        technologies: ['Python', 'Computer Vision', 'Deep Learning', 'Jupyter'],
+        image: '/assets/ComputerVision.jpg',
+        github: 'https://github.com/FeriusDMS/ComputerVision',
+        type: 'academic'
+      },
+      {
+        title: this.translate.translate('projects.hptarget.title'),
+        description: this.translate.translate('projects.hptarget.desc'),
+        technologies: ['C#', 'Game Modding', 'FFXIV', 'Dalamud'],
+        image: '/assets/HPTarget.png',
+        github: 'https://github.com/FeriusDMS/HPTarget',
+        type: 'personal'
+      },
+      {
+        title: this.translate.translate('projects.chatbot.title'),
+        description: this.translate.translate('projects.chatbot.desc'),
+        technologies: ['Python', 'NLP', 'Machine Learning'],
+        image: '/assets/IAChatBot.png',
+        github: 'https://github.com/FeriusDMS/chatGtp',
+        type: 'personal'
+      },
+      {
+        title: this.translate.translate('projects.area.title'),
+        description: this.translate.translate('projects.area.desc'),
+        technologies: ['JavaScript', 'React', 'Node.js', 'API'],
+        image: '/assets/Area.png',
+        github: 'https://github.com/FeriusDMS/Area',
+        type: 'academic'
+      },
+      {
+        title: this.translate.translate('projects.myrpg.title'),
+        description: this.translate.translate('projects.myrpg.desc'),
+        technologies: ['C', 'CSFML', 'Game Dev'],
+        image: '/assets/RPG.png',
+        github: 'https://github.com/FeriusDMS/myRPG',
+        type: 'academic'
+      },
+      {
+        title: this.translate.translate('projects.rtype.title'),
+        description: this.translate.translate('projects.rtype.desc'),
+        technologies: ['C++', 'Network', 'Game Dev'],
+        image: '/assets/RType.png',
+        github: 'https://github.com/FeriusDMS/R-Type',
+        type: 'academic'
+      },
+      {
+        title: this.translate.translate('projects.legacy.title'),
+        description: this.translate.translate('projects.legacy.desc'),
+        technologies: ['OCaml', 'Python', 'Angular', 'Web Dev'],
+        image: '/assets/Legacy.png',
+        github: 'https://github.com/FeriusDMS/LegacyProject',
+        type: 'academic'
+      },
+      {
+        title: this.translate.translate('projects.gomoku.title'),
+        description: this.translate.translate('projects.gomoku.desc'),
+        technologies: ['Python', 'AI', 'Game Theory', 'Algorithms'],
+        image: '/assets/Gomoku.png',
+        github: 'https://github.com/FeriusDMS/Gomoku',
+        type: 'academic'
+      },
+      {
+        title: this.translate.translate('projects.zappy.title'),
+        description: this.translate.translate('projects.zappy.desc'),
+        technologies: ['C', 'Network', 'AI', 'Simulation'],
+        image: '/assets/Zappy.png',
+        github: 'https://github.com/FeriusDMS/Zappy',
+        type: 'academic'
+      },
+    ];
+  }
 }
