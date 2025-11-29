@@ -57,7 +57,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.computerVision.results',
         dateKey: 'projects.computerVision.date',
         technologies: ['Python', 'Computer Vision', 'Deep Learning', 'Jupyter'],
-        image: '/assets/ComputerVision.jpg',
+        image: 'assets/ComputerVision.jpg',
         github: 'https://github.com/FeriusDMS/ComputerVision',
         type: 'academic'
       },
@@ -69,7 +69,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.hptarget.results',
         dateKey: 'projects.hptarget.date',
         technologies: ['C#', 'Game Modding', 'FFXIV', 'Dalamud'],
-        image: '/assets/HPTarget.png',
+        image: 'assets/HPTarget.png',
         github: 'https://github.com/FeriusDMS/HPTarget',
         type: 'personal'
       },
@@ -81,7 +81,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.chatbot.results',
         dateKey: 'projects.chatbot.date',
         technologies: ['Python', 'NLP', 'Machine Learning'],
-        image: '/assets/IAChatBot.png',
+        image: 'assets/IAChatBot.png',
         github: 'https://github.com/FeriusDMS/chatGtp',
         type: 'personal'
       },
@@ -93,7 +93,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.area.results',
         dateKey: 'projects.area.date',
         technologies: ['JavaScript', 'React', 'Node.js', 'API'],
-        image: '/assets/Area.png',
+        image: 'assets/Area.png',
         github: 'https://github.com/FeriusDMS/Area',
         type: 'academic'
       },
@@ -105,7 +105,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.myrpg.results',
         dateKey: 'projects.myrpg.date',
         technologies: ['C', 'CSFML', 'Game Dev'],
-        image: '/assets/RPG.png',
+        image: 'assets/RPG.png',
         github: 'https://github.com/FeriusDMS/myRPG',
         type: 'academic'
       },
@@ -117,7 +117,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.rtype.results',
         dateKey: 'projects.rtype.date',
         technologies: ['C++', 'Network', 'Game Dev'],
-        image: '/assets/RType.png',
+        image: 'assets/RType.png',
         github: 'https://github.com/FeriusDMS/R-Type',
         type: 'academic'
       },
@@ -129,7 +129,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.legacy.results',
         dateKey: 'projects.legacy.date',
         technologies: ['OCaml', 'Python', 'Angular', 'Web Dev'],
-        image: '/assets/Legacy.png',
+        image: 'assets/Legacy.png',
         github: 'https://github.com/FeriusDMS/LegacyProject',
         type: 'academic'
       },
@@ -141,7 +141,7 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.gomoku.results',
         dateKey: 'projects.gomoku.date',
         technologies: ['Python', 'AI', 'Game Theory', 'Algorithms'],
-        image: '/assets/Gomoku.png',
+        image: 'assets/Gomoku.png',
         github: 'https://github.com/FeriusDMS/Gomoku',
         type: 'academic'
       },
@@ -153,10 +153,11 @@ export class ProjectDetail implements OnInit {
         resultsKey: 'projects.zappy.results',
         dateKey: 'projects.zappy.date',
         technologies: ['C', 'Network', 'AI', 'Simulation'],
-        image: '/assets/Zappy.png',
+        image: 'assets/Zappy.png',
         github: 'https://github.com/FeriusDMS/Zappy',
         type: 'academic'
       },
     ];
   }
 }
+

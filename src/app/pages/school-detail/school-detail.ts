@@ -58,7 +58,7 @@ export class SchoolDetail implements OnInit {
         programKey: 'schools.epitech.program',
         highlightsKey: 'schools.epitech.highlights',
         achievementsKey: 'schools.epitech.achievements',
-        image: '/assets/Epitech.jpg',
+        image: 'assets/Epitech.jpg',
         website: 'https://www.epitech.eu',
         type: 'epitech'
       },
@@ -71,10 +71,11 @@ export class SchoolDetail implements OnInit {
         programKey: 'schools.hz.program',
         highlightsKey: 'schools.hz.highlights',
         achievementsKey: 'schools.hz.achievements',
-        image: '/assets/HZ.jpg',
+        image: 'assets/HZ.jpg',
         website: 'https://hz.nl',
         type: 'hz'
       },
     ];
   }
 }
+

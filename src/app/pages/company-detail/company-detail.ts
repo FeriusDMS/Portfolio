@@ -60,7 +60,7 @@ export class CompanyDetail implements OnInit {
         achievementsKey: 'companies.adesio.achievements',
         technologiesKey: 'companies.adesio.technologies',
         impactKey: 'companies.adesio.impact',
-        image: '/assets/Adesio.png',
+        image: 'assets/Adesio.png',
         website: 'https://www.adesio.com',
         type: 'adesio'
       },
@@ -74,10 +74,11 @@ export class CompanyDetail implements OnInit {
         achievementsKey: 'companies.arche.achievements',
         technologiesKey: 'companies.arche.technologies',
         impactKey: 'companies.arche.impact',
-        image: '/assets/ArcheMc2.png',
+        image: 'assets/ArcheMc2.png',
         website: 'https://www.arche-mc2.com',
         type: 'arche'
       },
     ];
   }
 }
+
