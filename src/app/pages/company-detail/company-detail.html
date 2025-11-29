@@ -1,0 +1,89 @@
+<div class="company-detail">
+  @if (company) {
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a routerLink="/">{{ translate.translate('nav.home') }}</a>
+        <span class="separator">/</span>
+        <a routerLink="/about">{{ translate.translate('nav.about') }}</a>
+        <span class="separator">/</span>
+        <span class="current">{{ translate.translate(company.nameKey) }}</span>
+      </div>
+
+      <!-- Header avec image -->
+      <div class="detail-header">
+        <div class="header-image" [style.background-image]="company.image ? 'url(' + company.image + ')' : ''">
+          <div class="header-overlay">
+            <span class="company-badge">
+              💼 {{ translate.translate(company.locationKey) }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="header-content">
+          <h1 class="company-name">{{ translate.translate(company.nameKey) }}</h1>
+          <p class="company-role">{{ translate.translate(company.roleKey) }}</p>
+          
+          <div class="company-meta">
+            <span class="company-period">📅 {{ translate.translate(company.periodKey) }}</span>
+            <span class="company-location">📍 {{ translate.translate(company.locationKey) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section détails -->
+      <div class="detail-content">
+        <div class="content-section">
+          <h2>{{ translate.translate('companyDetail.about') }}</h2>
+          <p>{{ translate.translate(company.descriptionKey) }}</p>
+        </div>
+
+        <div class="content-section">
+          <h2>🎯 {{ translate.translate('companyDetail.mission') }}</h2>
+          <p>{{ translate.translate(company.missionKey) }}</p>
+        </div>
+
+        <div class="content-section">
+          <h2>✨ {{ translate.translate('companyDetail.achievements') }}</h2>
+          <p>{{ translate.translate(company.achievementsKey) }}</p>
+        </div>
+
+        <div class="content-section">
+          <h2>💻 {{ translate.translate('companyDetail.technologies') }}</h2>
+          <div class="tech-tags">
+            @for (tech of translate.translate(company.technologiesKey).split(', '); track tech) {
+              <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2>🚀 {{ translate.translate('companyDetail.impact') }}</h2>
+          <p>{{ translate.translate(company.impactKey) }}</p>
+        </div>
+
+        @if (company.website) {
+          <div class="content-section">
+            <h2>{{ translate.translate('companyDetail.website') }}</h2>
+            <a [href]="company.website" target="_blank" class="website-link">
+              {{ company.website }}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+        }
+      </div>
+
+      <!-- Bouton retour -->
+      <div class="back-section">
+        <a routerLink="/about" class="btn btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          {{ translate.translate('companyDetail.backToAbout') }}
+        </a>
+      </div>
+    </div>
+  }
+</div>
