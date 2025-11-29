@@ -2,17 +2,17 @@
   <div class="container">
     <nav class="nav">
       <div class="logo">
-        <a href="#home">
+        <a routerLink="/" (click)="closeMenu()">
           <span class="logo-text">&lt;Andrea /&gt;</span>
         </a>
       </div>
       
       <ul class="nav-menu" [class.active]="menuActive()">
-        <li><a href="#home" (click)="closeMenu()">Accueil</a></li>
-        <li><a href="#about" (click)="closeMenu()">À propos</a></li>
-        <li><a href="#projects" (click)="closeMenu()">Projets</a></li>
-        <li><a href="#skills" (click)="closeMenu()">Compétences</a></li>
-        <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Accueil</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">À propos</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projets</a></li>
+        <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Compétences</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
       </ul>
       
       <div class="hamburger" (click)="toggleMenu()" [class.active]="menuActive()">

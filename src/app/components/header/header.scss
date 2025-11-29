@@ -71,7 +71,8 @@
       transition: width 0.3s ease;
     }
     
-    &:hover {
+    &:hover,
+    &.active {
       color: #3b82f6;
       
       &::after {
