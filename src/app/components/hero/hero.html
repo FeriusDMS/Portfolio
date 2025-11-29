@@ -2,16 +2,15 @@
   <div class="container">
     <div class="hero-content fade-in-up">
       <div class="hero-text">
-        <p class="greeting">👋 Bonjour, je suis</p>
+        <p class="greeting">{{ translate.translate('hero.greeting') }}</p>
         <h1 class="name">Andrea</h1>
-        <h2 class="title">Développeur Full Stack</h2>
+        <h2 class="title">{{ translate.translate('hero.title') }}</h2>
         <p class="description">
-          Passionné par la création d'applications web modernes et innovantes.
-          Étudiant en informatique, je transforme des idées en solutions digitales élégantes.
+          {{ translate.translate('hero.description') }}
         </p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-          <a href="#contact" class="btn btn-outline">Me contacter</a>
+          <a routerLink="/projects" class="btn btn-primary">{{ translate.translate('hero.viewProjects') }}</a>
+          <a routerLink="/contact" class="btn btn-outline">{{ translate.translate('hero.contact') }}</a>
         </div>
       </div>
       <div class="hero-image">
