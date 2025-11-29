@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../../environment/environment';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,7 +22,7 @@ export class Contact {
   submitted = false;
   error = false;
 
-  constructor() {
+  constructor(public translate: TranslationService) {
     // Initialiser EmailJS avec ta Public Key
     emailjs.init(environment.PUBLIC_KEY as string);
   }

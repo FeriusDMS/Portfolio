@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,4 +10,6 @@ import { RouterLink } from '@angular/router';
 })
 export class Footer {
   currentYear = new Date().getFullYear();
+  
+  constructor(public translate: TranslationService) {}
 }

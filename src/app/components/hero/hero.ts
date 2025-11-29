@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,5 +9,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './hero.scss',
 })
 export class Hero {
-
+  constructor(public translate: TranslationService) {}
 }

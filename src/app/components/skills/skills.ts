@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation.service';
 
 interface Skill {
   name: string;
@@ -14,6 +15,8 @@ interface Skill {
   styleUrl: './skills.scss',
 })
 export class Skills {
+  constructor(public translate: TranslationService) {}
+
   skills: Skill[] = [
     // Data Science & IA
     { name: 'Python', level: 95, category: 'Data Science & IA' },
