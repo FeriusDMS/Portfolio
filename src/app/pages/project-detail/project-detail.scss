@@ -84,7 +84,13 @@
 .project-meta {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  
+  .project-date {
+    color: #3b82f6;
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }
 
 .tech-stack {
@@ -154,28 +160,26 @@
 }
 
 .content-section {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #f1f5f9;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    
-    &::before {
-      content: '';
-      width: 4px;
-      height: 2rem;
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
-      border-radius: 4px;
-    }
   }
   
   p {
-    color: #94a3b8;
+    color: #cbd5e1;
     line-height: 1.8;
     font-size: 1.05rem;
+    text-align: justify;
   }
 }
 
