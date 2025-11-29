@@ -20,9 +20,17 @@ interface Project {
 export class Projects {
   projects: Project[] = [
     {
+      title: 'Computer Vision',
+      description: 'Projet de vision par ordinateur utilisant des techniques de Deep Learning pour la détection et reconnaissance d\'objets.',
+      technologies: ['Python', 'Computer Vision', 'Deep Learning', 'Jupyter'],
+      image: '',
+      github: 'https://github.com/FeriusDMS/ComputerVision',
+      type: 'academic'
+    },
+    {
       title: 'HPTarget - Mod FFXIV',
       description: 'Mod pour Final Fantasy XIV permettant d\'améliorer l\'expérience de jeu avec des fonctionnalités personnalisées.',
-      technologies: ['C#', 'Game Modding', 'FFXIV'],
+      technologies: ['C#', 'Game Modding', 'FFXIV', 'Dalamud'],
       image: '',
       github: 'https://github.com/FeriusDMS/HPTarget',
       type: 'personal'
@@ -61,7 +69,7 @@ export class Projects {
     },
     {
       title: 'Legacy project',
-      description: 'AWKWARD LEGACY is a restored software suite originally developed between 1995 and 2008 in OCaml, now modernized with a Python backend and Angular 17 frontend. This genealogical research tool is capable of revealing the origins of individuals and uncovering rightful heirs of powerful lineages.',
+      description: 'AWKWARD LEGACY est une suite logicielle restaurée, initialement développée entre 1995 et 2008 en OCaml, et modernisée avec un backend Python et un frontend Angular 17. Cet outil de recherche généalogique permet de retracer les origines d\'individus et d\'identifier les héritiers légitimes de lignées prestigieuses.',
       technologies: ['Angular', 'Network', 'Web Dev'],
       image: '',
       github: 'https://github.com/FeriusDMS/LegacyProject',

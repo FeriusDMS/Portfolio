@@ -15,28 +15,35 @@ interface Skill {
 })
 export class Skills {
   skills: Skill[] = [
-    // Frontend
-    { name: 'Angular', level: 90, category: 'Frontend' },
-    { name: 'React', level: 85, category: 'Frontend' },
-    { name: 'TypeScript', level: 88, category: 'Frontend' },
-    { name: 'HTML/CSS', level: 95, category: 'Frontend' },
-    { name: 'SCSS/SASS', level: 90, category: 'Frontend' },
+    // Data Science & IA
+    { name: 'Python', level: 95, category: 'Data Science & IA' },
+    { name: 'Machine Learning', level: 88, category: 'Data Science & IA' },
+    { name: 'Deep Learning', level: 85, category: 'Data Science & IA' },
+    { name: 'NLP', level: 82, category: 'Data Science & IA' },
+    { name: 'Computer Vision', level: 80, category: 'Data Science & IA' },
+    { name: 'TensorFlow/PyTorch', level: 83, category: 'Data Science & IA' },
     
-    // Backend
-    { name: 'Node.js', level: 85, category: 'Backend' },
-    { name: 'Express', level: 80, category: 'Backend' },
-    { name: 'MongoDB', level: 75, category: 'Backend' },
-    { name: 'PostgreSQL', level: 78, category: 'Backend' },
+    // Développement
+    { name: 'C/C++', level: 88, category: 'Développement' },
+    { name: 'C#', level: 85, category: 'Développement' },
+    { name: 'JavaScript/TypeScript', level: 82, category: 'Développement' },
+    { name: 'React/Angular', level: 80, category: 'Développement' },
+    { name: 'Node.js', level: 78, category: 'Développement' },
     
-    // Tools & Others
-    { name: 'Git/GitHub', level: 90, category: 'Outils' },
-    { name: 'Docker', level: 70, category: 'Outils' },
+    // Game Dev & Modding
+    { name: 'Game Development', level: 85, category: 'Game Dev' },
+    { name: 'FFXIV Modding', level: 20, category: 'Game Dev' },
+    { name: 'CSFML', level: 80, category: 'Game Dev' },
+    
+    // Outils
+    { name: 'Git/GitHub', level: 92, category: 'Outils' },
+    { name: 'Docker', level: 75, category: 'Outils' },
     { name: 'VS Code', level: 95, category: 'Outils' },
-    { name: 'Figma', level: 75, category: 'Design' },
+    { name: 'Jupyter Notebook', level: 88, category: 'Outils' },
   ];
 
   get categorizedSkills() {
-    const categories = ['Frontend', 'Backend', 'Outils', 'Design'];
+    const categories = ['Data Science & IA', 'Développement', 'Game Dev', 'Outils'];
     return categories.map(category => ({
       name: category,
       skills: this.skills.filter(skill => skill.category === category)
