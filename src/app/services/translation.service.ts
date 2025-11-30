@@ -25,6 +25,11 @@ export class TranslationService {
     'nav.share': { fr: 'Partager', en: 'Share' },
     'nav.linkCopied': { fr: 'Lien copié !', en: 'Link copied!' },
     
+    // Share Modal
+    'share.title': { fr: 'Partager mon portfolio', en: 'Share my portfolio' },
+    'share.subtitle': { fr: 'Choisissez votre plateforme préférée', en: 'Choose your preferred platform' },
+    'share.copyLink': { fr: 'Copier le lien', en: 'Copy link' },
+    
     // Hero
     'hero.greeting': { fr: '👋 Bonjour, je suis', en: '👋 Hello, I am' },
     'hero.title': { fr: 'Data Scientist & Développeur IA', en: 'Data Scientist & AI Developer' },
