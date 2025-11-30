@@ -22,6 +22,8 @@ export class TranslationService {
     'nav.projects': { fr: 'Projets', en: 'Projects' },
     'nav.skills': { fr: 'Compétences', en: 'Skills' },
     'nav.contact': { fr: 'Contact', en: 'Contact' },
+    'nav.share': { fr: 'Partager', en: 'Share' },
+    'nav.linkCopied': { fr: 'Lien copié !', en: 'Link copied!' },
     
     // Hero
     'hero.greeting': { fr: '👋 Bonjour, je suis', en: '👋 Hello, I am' },

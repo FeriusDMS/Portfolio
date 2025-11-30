@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Header {
   menuActive = signal(false);
+  showCopyToast = signal(false);
 
   constructor(public translate: TranslationService) {}
 
@@ -26,5 +27,21 @@ export class Header {
     const newLang = this.translate.currentLang() === 'fr' ? 'en' : 'fr';
     this.translate.setLanguage(newLang);
     this.closeMenu();
+  }
+
+  async shareWebsite() {
+    const url = window.location.origin + window.location.pathname;
+    
+    try {
+      await navigator.clipboard.writeText(url);
+      this.showCopyToast.set(true);
+      this.closeMenu();
+      
+      setTimeout(() => {
+        this.showCopyToast.set(false);
+      }, 2000);
+    } catch (err) {
+      console.error('Erreur lors de la copie:', err);
+    }
   }
 }
