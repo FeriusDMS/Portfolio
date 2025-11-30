@@ -109,6 +109,7 @@ export class ProjectDetail implements OnInit {
         technologies: ['C', 'CSFML', 'Game Dev'],
         image: 'assets/RPG.png',
         github: 'https://github.com/FeriusDMS/myRPG',
+        demoVideo: 'assets/rpg.mp4',
         type: 'academic'
       },
       {
@@ -121,6 +122,7 @@ export class ProjectDetail implements OnInit {
         technologies: ['C++', 'Network', 'Game Dev'],
         image: 'assets/RType.png',
         github: 'https://github.com/FeriusDMS/R-Type',
+        demoVideo: 'assets/rtype.mp4',
         type: 'academic'
       },
       {
