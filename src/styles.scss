@@ -43,6 +43,7 @@ body {
   
   @media (max-width: 768px) {
     padding: 3rem 0;
+    padding-top: 5rem; // Extra padding pour éviter que le header cache le titre
   }
 }
 
