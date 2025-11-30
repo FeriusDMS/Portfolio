@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser';
@@ -21,13 +21,21 @@ export class Contact {
 
   submitted = false;
   error = false;
+  sending = false;
 
-  constructor(public translate: TranslationService) {
+  constructor(
+    public translate: TranslationService,
+    private cdr: ChangeDetectorRef
+  ) {
     // Initialiser EmailJS avec ta Public Key
     emailjs.init(environment.PUBLIC_KEY as string);
   }
 
   async onSubmit() {
+    this.sending = true;
+    this.submitted = false;
+    this.error = false;
+    
     try {
       const serviceID = environment.SERVICE_ID as string;
       const templateID = environment.TEMPLATE_ID as string;
@@ -45,8 +53,11 @@ export class Contact {
       );
 
       // Succès
+      this.sending = false;
       this.submitted = true;
       this.error = false;
+      this.cdr.detectChanges(); // Force la détection des changements
+      console.log('Email envoyé avec succès! submitted =', this.submitted);
 
       // Reset après 3 secondes
       setTimeout(() => {
@@ -60,7 +71,9 @@ export class Contact {
       }, 3000);
     } catch (err) {
       console.error('Erreur lors de l\'envoi:', err);
+      this.sending = false;
       this.error = true;
+      this.cdr.detectChanges(); // Force la détection des changements
       setTimeout(() => {
         this.error = false;
       }, 3000);
