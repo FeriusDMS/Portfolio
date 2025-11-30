@@ -69,6 +69,18 @@
           </div>
         </div>
 
+        @if (project.demoVideo) {
+          <div class="content-section demo-section">
+            <h2>🎬 {{ translate.translate('projectDetail.demo') }}</h2>
+            <div class="video-container">
+              <video controls controlsList="nodownload" preload="metadata" [poster]="project.image">
+                <source [src]="project.demoVideo" type="video/mp4">
+                {{ translate.translate('projectDetail.videoNotSupported') }}
+              </video>
+            </div>
+          </div>
+        }
+
         @if (project.github) {
           <div class="content-section">
             <h2>{{ translate.translate('projectDetail.repository') }}</h2>

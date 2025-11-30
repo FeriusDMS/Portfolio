@@ -14,6 +14,7 @@ interface Project {
   image: string;
   github?: string;
   demo?: string;
+  demoVideo?: string;
   type: 'personal' | 'academic';
 }
 
@@ -59,6 +60,7 @@ export class ProjectDetail implements OnInit {
         technologies: ['Python', 'Computer Vision', 'Deep Learning', 'Jupyter'],
         image: 'assets/ComputerVision.jpg',
         github: 'https://github.com/FeriusDMS/ComputerVision',
+        demoVideo: 'assets/output_anonymized.mp4',
         type: 'academic'
       },
       {
