@@ -22,6 +22,13 @@ export class TranslationService {
     'nav.projects': { fr: 'Projets', en: 'Projects' },
     'nav.skills': { fr: 'Compétences', en: 'Skills' },
     'nav.contact': { fr: 'Contact', en: 'Contact' },
+    'nav.share': { fr: 'Partager', en: 'Share' },
+    'nav.linkCopied': { fr: 'Lien copié !', en: 'Link copied!' },
+    
+    // Share Modal
+    'share.title': { fr: 'Partager mon portfolio', en: 'Share my portfolio' },
+    'share.subtitle': { fr: 'Choisissez votre plateforme préférée', en: 'Choose your preferred platform' },
+    'share.copyLink': { fr: 'Copier le lien', en: 'Copy link' },
     
     // Hero
     'hero.greeting': { fr: '👋 Bonjour, je suis', en: '👋 Hello, I am' },
@@ -33,7 +40,7 @@ export class TranslationService {
     // About
     'about.title': { fr: 'À Propos de Moi', en: 'About Me' },
     'about.subtitle': { fr: 'Étudiant & Développeur Passionné', en: 'Student & Passionate Developer' },
-    'about.intro': { fr: "Salut ! 👋 Je suis Andrea, étudiant en 5ème année à EPITECH Rennes. Passionné par l'Intelligence Artificielle, le Machine Learning et le développement de jeux vidéo, j'aime créer des projets innovants qui mélangent créativité et technique. Que ce soit entraîner des modèles d'IA, créer des mods pour FFXIV ou développer des applications web, j'adore transformer des idées en réalité.", en: "Hi! 👋 I'm Andrea, a 5th year student at EPITECH Rennes. Passionate about Artificial Intelligence, Machine Learning and video game development, I love creating innovative projects that blend creativity and technology. Whether training AI models, creating mods for FFXIV or developing web applications, I love turning ideas into reality." },
+    'about.intro': { fr: "Salut ! 👋 Je suis Andrea, étudiant en 5ème année à EPITECH Rennes. Passionné par l'Intelligence Artificielle, le Machine Learning et le développement de jeux vidéos, j'aime créer des projets innovants qui mélangent créativité et technique. Que ce soit entraîner des modèles d'IA, créer des mods pour FFXIV ou développer des applications web, j'adore transformer des idées en réalité.", en: "Hi! 👋 I'm Andrea, a 5th year student at EPITECH Rennes. Passionate about Artificial Intelligence, Machine Learning and video game development, I love creating innovative projects that blend creativity and technology. Whether training AI models, creating mods for FFXIV or developing web applications, I love turning ideas into reality." },
     'about.journey.title': { fr: '🎓 Mon Parcours', en: '🎓 My Journey' },
     'about.journey.text': { fr: "Durant mes années à EPITECH, j'ai eu la chance de partir 1 an à l'étranger aux Pays-Bas (HZ University) pour explorer le monde de l'Intelligence Artificielle et du Deep Learning. J'ai aussi eu l'opportunité de travailler sur des projets professionnels lors de stages chez ADESIO et ARCHE MC2, où j'ai pu mettre en pratique mes compétences en développement.", en: "During my years at EPITECH, I had the chance to spend 1 year abroad in the Netherlands (HZ University) to explore the world of Artificial Intelligence and Deep Learning. I also had the opportunity to work on professional projects during internships at ADESIO and ARCHE MC2, where I was able to put my development skills into practice." },
     'about.journey.part1': { fr: "Durant mes années à ", en: "During my years at " },
@@ -130,6 +137,8 @@ export class TranslationService {
     'projectDetail.repository': { fr: 'Dépôt GitHub', en: 'GitHub Repository' },
     'projectDetail.date': { fr: 'Date', en: 'Date' },
     'projectDetail.backToProjects': { fr: 'Retour aux projets', en: 'Back to projects' },
+    'projectDetail.demo': { fr: 'Démonstration', en: 'Demo' },
+    'projectDetail.videoNotSupported': { fr: 'Votre navigateur ne supporte pas la lecture de vidéos.', en: 'Your browser does not support video playback.' },
     
     // Schools
     'schools.epitech.name': { fr: 'EPITECH Rennes', en: 'EPITECH Rennes' },

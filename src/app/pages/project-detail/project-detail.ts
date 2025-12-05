@@ -14,6 +14,7 @@ interface Project {
   image: string;
   github?: string;
   demo?: string;
+  demoVideo?: string;
   type: 'personal' | 'academic';
 }
 
@@ -59,6 +60,7 @@ export class ProjectDetail implements OnInit {
         technologies: ['Python', 'Computer Vision', 'Deep Learning', 'Jupyter'],
         image: 'assets/ComputerVision.jpg',
         github: 'https://github.com/FeriusDMS/ComputerVision',
+        demoVideo: 'assets/output_anonymized.mp4',
         type: 'academic'
       },
       {
@@ -107,6 +109,7 @@ export class ProjectDetail implements OnInit {
         technologies: ['C', 'CSFML', 'Game Dev'],
         image: 'assets/RPG.png',
         github: 'https://github.com/FeriusDMS/myRPG',
+        demoVideo: 'assets/rpg.mp4',
         type: 'academic'
       },
       {
@@ -119,6 +122,7 @@ export class ProjectDetail implements OnInit {
         technologies: ['C++', 'Network', 'Game Dev'],
         image: 'assets/RType.png',
         github: 'https://github.com/FeriusDMS/R-Type',
+        demoVideo: 'assets/rtype.mp4',
         type: 'academic'
       },
       {
