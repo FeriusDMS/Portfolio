@@ -137,6 +137,8 @@ export class TranslationService {
     'projectDetail.repository': { fr: 'Dépôt GitHub', en: 'GitHub Repository' },
     'projectDetail.date': { fr: 'Date', en: 'Date' },
     'projectDetail.backToProjects': { fr: 'Retour aux projets', en: 'Back to projects' },
+    'projectDetail.demo': { fr: 'Démonstration', en: 'Demo' },
+    'projectDetail.videoNotSupported': { fr: 'Votre navigateur ne supporte pas la lecture de vidéos.', en: 'Your browser does not support video playback.' },
     
     // Schools
     'schools.epitech.name': { fr: 'EPITECH Rennes', en: 'EPITECH Rennes' },
