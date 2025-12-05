@@ -112,8 +112,10 @@
           ></textarea>
         </div>
         
-        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">
-          @if (submitted) {
+        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid || sending">
+          @if (sending) {
+            ⏳ {{ translate.translate('contact.sending') }}
+          } @else if (submitted) {
             ✓ {{ translate.translate('contact.sent') }}
           } @else if (error) {
             ✗ {{ translate.translate('contact.error') }}
