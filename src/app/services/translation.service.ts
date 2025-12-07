@@ -140,6 +140,22 @@ export class TranslationService {
     'projectDetail.demo': { fr: 'Démonstration', en: 'Demo' },
     'projectDetail.videoNotSupported': { fr: 'Votre navigateur ne supporte pas la lecture de vidéos.', en: 'Your browser does not support video playback.' },
     
+    // About Detail
+    'aboutDetail.title': { fr: 'À propos de moi', en: 'About me' },
+    'aboutDetail.whoAmI': { fr: 'Qui suis-je ?', en: 'Who am I?' },
+    'aboutDetail.intro': { fr: 'Je suis Andrea Mancion, étudiant passionné en Data Science et IA à EPITECH. Fasciné par le potentiel de l\'intelligence artificielle et du machine learning, je développe des projets innovants qui combinent créativité et technologie.', en: 'I am Andrea Mancion, a passionate Data Science and AI student at EPITECH. Fascinated by the potential of artificial intelligence and machine learning, I develop innovative projects that combine creativity and technology.' },
+    'aboutDetail.passion': { fr: 'Ma Passion', en: 'My Passion' },
+    'aboutDetail.passionText': { fr: 'L\'IA et le Machine Learning sont au cœur de mes préoccupations. Je m\'efforce constamment d\'approfondir mes connaissances en Deep Learning, Computer Vision et NLP. Chaque projet est pour moi une opportunité d\'explorer de nouvelles techniques et de repousser les limites du possible.', en: 'AI and Machine Learning are at the heart of my concerns. I constantly strive to deepen my knowledge in Deep Learning, Computer Vision and NLP. Each project is an opportunity for me to explore new techniques and push the boundaries of what\'s possible.' },
+    'aboutDetail.experience': { fr: 'Expérience Professionnelle', en: 'Professional Experience' },
+    'aboutDetail.experienceText': { fr: 'J\'ai eu l\'opportunité de travailler sur des projets variés allant du développement web à l\'intelligence artificielle. Mes expériences chez ADESIO et ARCHE MC2 m\'ont permis de développer mes compétences techniques et ma capacité à travailler en équipe sur des projets complexes.', en: 'I had the opportunity to work on various projects ranging from web development to artificial intelligence. My experiences at ADESIO and ARCHE MC2 allowed me to develop my technical skills and my ability to work in a team on complex projects.' },
+    'aboutDetail.education': { fr: 'Parcours Académique', en: 'Academic Background' },
+    'aboutDetail.educationText': { fr: 'Actuellement en 5ème année à EPITECH, j\'ai également effectué un échange académique à HZ University aux Pays-Bas. Cette expérience internationale m\'a permis d\'élargir ma vision du développement logiciel et de découvrir de nouvelles approches pédagogiques.', en: 'Currently in my 5th year at EPITECH, I also completed an academic exchange at HZ University in the Netherlands. This international experience allowed me to broaden my vision of software development and discover new educational approaches.' },
+    'aboutDetail.goals': { fr: 'Objectifs Futurs', en: 'Future Goals' },
+    'aboutDetail.goalsText': { fr: 'Mon objectif est de devenir un expert en intelligence artificielle et de contribuer à des projets qui ont un impact positif sur la société. Je souhaite continuer à apprendre, innover et partager mes connaissances avec la communauté tech.', en: 'My goal is to become an expert in artificial intelligence and contribute to projects that have a positive impact on society. I want to continue learning, innovating and sharing my knowledge with the tech community.' },
+    'aboutDetail.hobbies': { fr: 'Centres d\'Intérêt', en: 'Interests' },
+    'aboutDetail.hobbiesText': { fr: 'En dehors du code, je suis passionné par les jeux vidéo (notamment le modding), la science-fiction et la technologie. J\'aime également participer à des hackathons et des événements tech pour rencontrer d\'autres passionnés et découvrir les dernières innovations.', en: 'Outside of coding, I\'m passionate about video games (especially modding), science fiction and technology. I also enjoy participating in hackathons and tech events to meet other enthusiasts and discover the latest innovations.' },
+    'aboutDetail.backToHome': { fr: 'Retour à l\'accueil', en: 'Back to home' },
+    
     // Schools
     'schools.epitech.name': { fr: 'EPITECH Rennes', en: 'EPITECH Rennes' },
     'schools.epitech.degree': { fr: 'Expert en Technologies de l\'Information', en: 'Expert in Information Technologies' },

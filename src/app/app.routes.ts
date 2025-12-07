@@ -7,10 +7,12 @@ import { ContactPage } from './pages/contact-page/contact-page';
 import { ProjectDetail } from './pages/project-detail/project-detail';
 import { SchoolDetail } from './pages/school-detail/school-detail';
 import { CompanyDetail } from './pages/company-detail/company-detail';
+import { AboutDetail } from './pages/about-detail/about-detail';
 
 export const routes: Routes = [
   { path: '', component: HomePage },
   { path: 'about', component: AboutPage },
+  { path: 'about/me', component: AboutDetail },
   { path: 'schools/:id', component: SchoolDetail },
   { path: 'companies/:id', component: CompanyDetail },
   { path: 'projects', component: ProjectsPage },

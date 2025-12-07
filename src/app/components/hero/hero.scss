@@ -105,6 +105,26 @@
   }
 }
 
+.image-link {
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  z-index: 10;
+  
+  &:hover {
+    transform: scale(1.05);
+    
+    .image-placeholder {
+      .code-icon {
+        transform: scale(1.1);
+        color: #60a5fa;
+      }
+    }
+  }
+}
+
 .image-placeholder {
   position: relative;
   width: 400px;
@@ -112,6 +132,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
+  
+  * {
+    pointer-events: none;
+  }
   
   @media (max-width: 768px) {
     width: 300px;
@@ -122,6 +147,7 @@
     position: absolute;
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
+    pointer-events: none;
     
     &.circle-1 {
       width: 400px;
