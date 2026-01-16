@@ -344,6 +344,11 @@ export class TranslationService {
       en: 'Outside of coding, I enjoy music, video games and new technologies. I also appreciate time spent with friends and family, as well as walks by the sea that allow me to recharge and come back with new ideas.',
     },
     'aboutDetail.backToHome': { fr: "Retour à l'accueil", en: 'Back to home' },
+    'aboutDetail.videoTitle': { fr: 'Présentation Vidéo', en: 'Video Presentation' },
+    'aboutDetail.videoError': {
+      fr: 'Votre navigateur ne supporte pas la lecture de vidéos.',
+      en: 'Your browser does not support video playback.',
+    },
 
     // Schools
     'schools.epitech.name': { fr: 'EPITECH Rennes', en: 'EPITECH Rennes' },
