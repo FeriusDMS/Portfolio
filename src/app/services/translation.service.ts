@@ -295,8 +295,8 @@ export class TranslationService {
       en: 'I am Andrea Mancion, a passionate Data Science and AI student at EPITECH. Fascinated by the potential of artificial intelligence and machine learning, I develop innovative projects that combine creativity and technology.',
     },
     'aboutDetail.personalInfo': {
-      fr: "J'ai 23 ans, né le 19 janvier 2002 à Brest, en Bretagne. Passionné par l'intelligence artificielle depuis mon adolescence, j'ai transformé cette passion en parcours académique et professionnel.",
-      en: 'I am 23 years old, born on January 19, 2002 in Brest, Brittany. Passionate about artificial intelligence since my adolescence, I have transformed this passion into an academic and professional path.',
+      fr: "J'ai 22 ans, né le 19 janvier 2003 à Brest, en Bretagne. Passionné par l'intelligence artificielle depuis mon adolescence, j'ai transformé cette passion en parcours académique et professionnel.",
+      en: 'I am 22 years old, born on January 19, 2003 in Brest, Brittany. Passionate about artificial intelligence since my adolescence, I have transformed this passion into an academic and professional path.',
     },
     'aboutDetail.passion': { fr: 'Ma Passion', en: 'My Passion' },
     'aboutDetail.passionText': {

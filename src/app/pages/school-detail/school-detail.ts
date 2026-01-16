@@ -8,6 +8,7 @@ interface School {
   degreeKey: string;
   periodKey: string;
   locationKey: string;
+  address: string;
   descriptionKey: string;
   programKey: string;
   highlightsKey: string;
@@ -41,9 +42,24 @@ export class SchoolDetail implements OnInit {
   loadSchool() {
     const schools = this.getAllSchools();
     this.school = schools.find((s) => s.type === this.schoolId) || null;
-    
+
     if (!this.school) {
       this.router.navigate(['/about']);
+    }
+  }
+
+  getGoogleMapsUrl(location: string): string {
+    const encodedLocation = encodeURIComponent(location);
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      // Sur mobile, utilise l'URL qui ouvre l'application Google Maps
+      return `https://maps.google.com/?q=${encodedLocation}`;
+    } else {
+      // Sur desktop, utilise l'URL standard
+      return `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
     }
   }
 
@@ -54,28 +70,29 @@ export class SchoolDetail implements OnInit {
         degreeKey: 'schools.epitech.degree',
         periodKey: 'schools.epitech.period',
         locationKey: 'schools.epitech.location',
+        address: '12 Rue Jean-Louis Bertrand, 35000 Rennes',
         descriptionKey: 'schools.epitech.description',
         programKey: 'schools.epitech.program',
         highlightsKey: 'schools.epitech.highlights',
         achievementsKey: 'schools.epitech.achievements',
         image: 'assets/Epitech.jpg',
         website: 'https://www.epitech.eu',
-        type: 'epitech'
+        type: 'epitech',
       },
       {
         nameKey: 'schools.hz.name',
         degreeKey: 'schools.hz.degree',
         periodKey: 'schools.hz.period',
         locationKey: 'schools.hz.location',
+        address: 'Het Groene Woud 1, 4331 NB Middelburg, Pays-Bas',
         descriptionKey: 'schools.hz.description',
         programKey: 'schools.hz.program',
         highlightsKey: 'schools.hz.highlights',
         achievementsKey: 'schools.hz.achievements',
         image: 'assets/HZ.jpg',
         website: 'https://hz.nl',
-        type: 'hz'
+        type: 'hz',
       },
     ];
   }
 }
-
