@@ -51,7 +51,17 @@ export class CompanyDetail implements OnInit {
 
   getGoogleMapsUrl(location: string): string {
     const encodedLocation = encodeURIComponent(location);
-    return `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      // Sur mobile, utilise l'URL qui ouvre l'application Google Maps
+      return `https://maps.google.com/?q=${encodedLocation}`;
+    } else {
+      // Sur desktop, utilise l'URL standard
+      return `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
+    }
   }
 
   getAllCompanies(): Company[] {
