@@ -1,0 +1,56 @@
+<div class="patch-notes-container">
+  <!-- Modal -->
+  <div class="modal-overlay" [class.active]="showModal()" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <h2>{{ translate.translate('patchNotes.title') }}</h2>
+          <p class="current-version">
+            {{ translate.translate('patchNotes.currentVersion') }}:
+            <span class="version-badge">v{{ currentVersion }}</span>
+          </p>
+        </div>
+        <button class="close-btn" (click)="closeModal()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="patch-notes-list">
+          @for (note of patchNotes; track note.version) {
+          <div class="patch-note-item" [class.latest]="note.version === patchNotes[0].version">
+            <div class="patch-note-header">
+              <div class="version-info">
+                <h3>{{ translate.translate('patchNotes.version') }} {{ note.version }}</h3>
+                @if (note.version === patchNotes[0].version) {
+                <span class="latest-badge">{{ translate.translate('patchNotes.latest') }}</span>
+                }
+              </div>
+              <span class="date">{{ note.date }}</span>
+            </div>
+            <ul class="changes-list">
+              @for (change of (translate.currentLang() === 'fr' ? note.changes.fr :
+              note.changes.en); track $index) {
+              <li>{{ change }}</li>
+              }
+            </ul>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
