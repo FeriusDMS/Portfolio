@@ -1,15 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslationService } from '../../services/translation.service';
 import { CommonModule } from '@angular/common';
+import { PatchNotesComponent } from '../patch-notes/patch-notes';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterLinkActive, CommonModule, PatchNotesComponent],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
+  @ViewChild(PatchNotesComponent) patchNotesComponent!: PatchNotesComponent;
+
   menuActive = signal(false);
   showCopyToast = signal(false);
   showShareModal = signal(false);
@@ -30,6 +33,11 @@ export class Header {
     this.closeMenu();
   }
 
+  openPatchNotes() {
+    this.patchNotesComponent.openModal();
+    this.closeMenu();
+  }
+
   shareWebsite() {
     this.showShareModal.set(true);
     this.closeMenu();
@@ -41,12 +49,12 @@ export class Header {
 
   async copyLink() {
     const url = window.location.href;
-    
+
     try {
       await navigator.clipboard.writeText(url);
       this.showCopyToast.set(true);
       this.closeShareModal();
-      
+
       setTimeout(() => {
         this.showCopyToast.set(false);
       }, 2000);
@@ -59,10 +67,10 @@ export class Header {
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent('Portfolio - Andrea Mancion');
     const text = encodeURIComponent('Découvrez mon portfolio !');
-    
+
     let shareUrl = '';
-    
-    switch(platform) {
+
+    switch (platform) {
       case 'whatsapp':
         shareUrl = `https://wa.me/?text=${text}%20${url}`;
         break;
@@ -76,7 +84,7 @@ export class Header {
         shareUrl = `mailto:?subject=${title}&body=${text}%20${url}`;
         break;
     }
-    
+
     if (shareUrl) {
       window.open(shareUrl, '_blank');
       this.closeShareModal();

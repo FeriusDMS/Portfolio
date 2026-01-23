@@ -8,7 +8,7 @@
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: all 0.3s ease;
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -27,7 +27,7 @@
   a {
     text-decoration: none;
   }
-  
+
   .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
@@ -36,7 +36,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     transition: all 0.3s ease;
-    
+
     &:hover {
       background: linear-gradient(135deg, #3b82f6, #60a5fa);
       -webkit-background-clip: text;
@@ -50,7 +50,7 @@
   display: flex;
   list-style: none;
   gap: 2rem;
-  
+
   li a {
     color: #f1f5f9;
     text-decoration: none;
@@ -59,7 +59,7 @@
     padding: 0.5rem 0;
     position: relative;
     transition: color 0.3s ease;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -70,17 +70,17 @@
       background: linear-gradient(90deg, #2563eb, #3b82f6);
       transition: width 0.3s ease;
     }
-    
+
     &:hover,
     &.active {
       color: #3b82f6;
-      
+
       &::after {
         width: 100%;
       }
     }
   }
-  
+
   @media (max-width: 768px) {
     position: fixed;
     left: -100%;
@@ -92,11 +92,11 @@
     transition: 0.3s;
     padding: 2rem 0;
     gap: 1rem;
-    
+
     &.active {
       left: 0;
     }
-    
+
     .lang-switcher {
       margin-top: 1rem;
       padding-top: 1rem;
@@ -124,21 +124,21 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
-  
+
   .flag {
     font-size: 1.2rem;
   }
-  
+
   .lang-text {
     font-size: 0.9rem;
   }
-  
+
   &:hover {
     background: rgba(37, 99, 235, 0.2);
     border-color: #3b82f6;
     transform: translateY(-2px);
   }
-  
+
   @media (max-width: 768px) {
     width: 100%;
     justify-content: center;
@@ -159,7 +159,9 @@
 }
 
 .share-btn,
-.share-btn-desktop {
+.share-btn-desktop,
+.patch-notes-btn,
+.patch-notes-btn-desktop {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -171,18 +173,18 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
-  
+
   svg {
     width: 20px;
     height: 20px;
   }
-  
+
   &:hover {
     background: rgba(37, 99, 235, 0.2);
     border-color: #3b82f6;
     transform: translateY(-2px);
   }
-  
+
   @media (max-width: 768px) {
     width: 100%;
     justify-content: center;
@@ -190,13 +192,15 @@
   }
 }
 
-.share-btn-desktop {
+.share-btn-desktop,
+.patch-notes-btn-desktop {
   padding: 0.5rem 1rem;
-  
-  .share-text {
+
+  .share-text,
+  .patch-notes-text {
     font-size: 0.9rem;
   }
-  
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -222,17 +226,17 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   animation: slideIn 0.3s ease;
   z-index: 1001;
-  
+
   svg {
     width: 20px;
     height: 20px;
   }
-  
+
   span {
     font-weight: 500;
     font-size: 0.95rem;
   }
-  
+
   @media (max-width: 768px) {
     left: 50%;
     right: auto;
@@ -286,7 +290,7 @@
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   animation: modalSlideUp 0.3s ease;
-  
+
   @media (max-width: 768px) {
     max-width: 95%;
   }
@@ -309,7 +313,7 @@
   align-items: center;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  
+
   h3 {
     margin: 0;
     font-size: 1.5rem;
@@ -319,7 +323,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .close-btn {
     background: none;
     border: none;
@@ -331,7 +335,7 @@
     justify-content: center;
     border-radius: 8px;
     transition: all 0.3s ease;
-    
+
     &:hover {
       background: rgba(255, 255, 255, 0.1);
       color: #f1f5f9;
@@ -353,7 +357,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  
+
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
@@ -372,71 +376,71 @@
   transition: all 0.3s ease;
   font-weight: 500;
   font-size: 0.95rem;
-  
+
   svg {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
   }
-  
+
   span {
     white-space: nowrap;
   }
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
-  
+
   &.whatsapp {
     &:hover {
       background: rgba(37, 211, 102, 0.15);
-      border-color: #25D366;
-      
+      border-color: #25d366;
+
       svg {
-        color: #25D366;
+        color: #25d366;
       }
     }
   }
-  
+
   &.linkedin {
     &:hover {
       background: rgba(10, 102, 194, 0.15);
-      border-color: #0A66C2;
-      
+      border-color: #0a66c2;
+
       svg {
-        color: #0A66C2;
+        color: #0a66c2;
       }
     }
   }
-  
+
   &.twitter {
     &:hover {
       background: rgba(255, 255, 255, 0.15);
       border-color: #ffffff;
-      
+
       svg {
         color: #ffffff;
       }
     }
   }
-  
+
   &.email {
     &:hover {
       background: rgba(234, 88, 12, 0.15);
       border-color: #ea580c;
-      
+
       svg {
         stroke: #ea580c;
       }
     }
   }
-  
+
   &.copy {
     &:hover {
       background: rgba(37, 99, 235, 0.15);
       border-color: #2563eb;
-      
+
       svg {
         stroke: #2563eb;
       }
@@ -449,7 +453,7 @@
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  
+
   span {
     width: 25px;
     height: 3px;
@@ -457,19 +461,19 @@
     border-radius: 3px;
     transition: all 0.3s ease;
   }
-  
+
   &.active span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
   }
-  
+
   &.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   &.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
   }
-  
+
   @media (max-width: 768px) {
     display: flex;
   }
