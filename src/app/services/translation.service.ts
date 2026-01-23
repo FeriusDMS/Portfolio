@@ -24,6 +24,7 @@ export class TranslationService {
     'nav.contact': { fr: 'Contact', en: 'Contact' },
     'nav.share': { fr: 'Partager', en: 'Share' },
     'nav.linkCopied': { fr: 'Lien copié !', en: 'Link copied!' },
+    'nav.discord': { fr: 'Discord', en: 'Discord' },
 
     // Share Modal
     'share.title': { fr: 'Partager mon portfolio', en: 'Share my portfolio' },
