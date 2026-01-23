@@ -24,6 +24,7 @@ export class TranslationService {
     'nav.contact': { fr: 'Contact', en: 'Contact' },
     'nav.share': { fr: 'Partager', en: 'Share' },
     'nav.linkCopied': { fr: 'Lien copié !', en: 'Link copied!' },
+    'nav.discord': { fr: 'Discord', en: 'Discord' },
     'nav.patchNotes': { fr: 'Notes de version', en: 'Patch Notes' },
 
     // Patch Notes
