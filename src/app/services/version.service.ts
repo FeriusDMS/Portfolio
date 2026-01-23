@@ -23,9 +23,13 @@ export class VersionService {
         fr: [
           "🆕 Ajout d'un système de patch notes",
           "🆕 Ajout d'un système de versioning",
-          "✨ Amélioration de l'interface utilisateur",
+          "🆕 Ajout d'une nouvelle connexion avec Discord",
         ],
-        en: ['🆕 Added patch notes system', '🆕 Added versioning system', '✨ UI improvements'],
+        en: [
+          '🆕 Added patch notes system',
+          '🆕 Added versioning system',
+          '🆕 Added new Discord connection',
+        ],
       },
     },
   ];
