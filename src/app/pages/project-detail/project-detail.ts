@@ -16,6 +16,7 @@ interface Project {
   demo?: string;
   demoVideo?: string;
   type: 'personal' | 'academic';
+  abandoned?: boolean;
 }
 
 @Component({
@@ -160,6 +161,19 @@ export class ProjectDetail implements OnInit {
         image: 'assets/Zappy.png',
         github: 'https://github.com/FeriusDMS/Zappy',
         type: 'academic'
+      },
+      {
+        titleKey: 'projects.blockchain.title',
+        descriptionKey: 'projects.blockchain.desc',
+        objectiveKey: 'projects.blockchain.objective',
+        challengesKey: 'projects.blockchain.challenges',
+        resultsKey: 'projects.blockchain.results',
+        dateKey: 'projects.blockchain.date',
+        technologies: ['TypeScript', 'Solidity', 'Blockchain', 'Ethereum', 'Next.js', 'Hardhat'],
+        image: 'assets/Blockchain.png',
+        github: 'https://github.com/FeriusDMS/Blockchain',
+        type: 'academic',
+        abandoned: true
       },
     ];
   }
