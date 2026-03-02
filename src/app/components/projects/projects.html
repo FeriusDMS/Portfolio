@@ -11,6 +11,9 @@
           <div class="project-image" [style.background-image]="project.image ? 'url(' + project.image + ')' : ''" [class.has-image]="project.image">
             <div class="image-overlay">
               <span class="project-type">{{ project.type === 'personal' ? '🚀 ' + translate.translate('projects.personal') : '📚 ' + translate.translate('projects.academic') }}</span>
+              @if (project.abandoned) {
+                <span class="project-abandoned">⚠️ {{ translate.translate('projects.abandoned') }}</span>
+              }
             </div>
           </div>
           
