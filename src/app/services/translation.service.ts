@@ -447,8 +447,8 @@ export class TranslationService {
       en: 'Full-Stack Developer - Internship',
     },
     'companies.adesio.period': {
-      fr: 'Février 2023 - Juin 2023, Septembre 2025 - Février 2026',
-      en: 'February 2023 - June 2023, September 2025 - February 2026',
+      fr: 'Février 2023 - Juin 2023, Septembre 2025 - Aujourd\'hui',
+      en: 'February 2023 - June 2023, September 2025 - Today',
     },
     'companies.adesio.location': { fr: 'Saint-Malo, France', en: 'Saint-Malo, France' },
     'companies.adesio.description': {
