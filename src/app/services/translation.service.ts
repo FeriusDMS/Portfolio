@@ -24,6 +24,14 @@ export class TranslationService {
     'nav.contact': { fr: 'Contact', en: 'Contact' },
     'nav.share': { fr: 'Partager', en: 'Share' },
     'nav.linkCopied': { fr: 'Lien copié !', en: 'Link copied!' },
+    'nav.discord': { fr: 'Discord', en: 'Discord' },
+    'nav.patchNotes': { fr: 'Notes de version', en: 'Patch Notes' },
+
+    // Patch Notes
+    'patchNotes.title': { fr: 'Notes de Version', en: 'Patch Notes' },
+    'patchNotes.currentVersion': { fr: 'Version actuelle', en: 'Current version' },
+    'patchNotes.version': { fr: 'Version', en: 'Version' },
+    'patchNotes.latest': { fr: 'Dernière', en: 'Latest' },
 
     // Share Modal
     'share.title': { fr: 'Partager mon portfolio', en: 'Share my portfolio' },
@@ -271,6 +279,25 @@ export class TranslationService {
       en: 'C server handling 50+ simultaneous clients, 4 AI clients with different strategies, 3D graphical interface with SFML, robust network protocol, inter-agent communication system.',
     },
     'projects.zappy.date': { fr: '2023', en: '2023' },
+    'projects.blockchain.title': { fr: 'LuxeWatch Token - Blockchain', en: 'LuxeWatch Token - Blockchain' },
+    'projects.blockchain.desc': {
+      fr: 'Plateforme blockchain pour la tokenisation de montres de luxe en tant que RWA (Real-World Assets). Tokens fongibles ERC-20 et NFTs ERC-721 avec conformité KYC.',
+      en: 'Blockchain platform for tokenizing luxury watches as RWAs (Real-World Assets). Fungible ERC-20 tokens and ERC-721 NFTs with KYC compliance.',
+    },
+    'projects.blockchain.objective': {
+      fr: 'Développer une plateforme complète de tokenisation de montres de luxe utilisant Ethereum et Solidity, avec tokens ERC-20 pour la propriété fractionnée et NFTs ERC-721 pour les pièces uniques. Intégration Uniswap V3 pour le trading, système KYC on-chain, backend indexeur et frontend Next.js.',
+      en: 'Develop a comprehensive luxury watch tokenization platform using Ethereum and Solidity, with ERC-20 tokens for fractional ownership and ERC-721 NFTs for unique pieces. Uniswap V3 integration for trading, on-chain KYC system, indexer backend and Next.js frontend.',
+    },
+    'projects.blockchain.challenges': {
+      fr: 'Implémentation de smart contracts sécurisés (ERC-20, ERC-721), système KYC/whitelist/blacklist on-chain, intégration Uniswap V3 avec pools de liquidité, création d\'un indexeur temps réel pour les événements blockchain, architecture full-stack complexe (Hardhat, Next.js, PostgreSQL).',
+      en: 'Implementation of secure smart contracts (ERC-20, ERC-721), on-chain KYC/whitelist/blacklist system, Uniswap V3 integration with liquidity pools, creation of real-time indexer for blockchain events, complex full-stack architecture (Hardhat, Next.js, PostgreSQL).',
+    },
+    'projects.blockchain.results': {
+      fr: 'Plateforme complète avec smart contracts déployés sur Sepolia testnet, système de tokens WATCH avec 1M de supply, NFTs avec métadonnées riches (marque, modèle, évaluation), pools Uniswap V3 WATCH/USDC et WATCH/WETH, backend avec indexation événements (<1min de latence), oracle de prix pour évaluations, frontend responsive avec connexion wallet.',
+      en: 'Complete platform with smart contracts deployed on Sepolia testnet, WATCH token system with 1M supply, NFTs with rich metadata (brand, model, valuation), Uniswap V3 pools WATCH/USDC and WATCH/WETH, backend with event indexing (<1min latency), price oracle for valuations, responsive frontend with wallet connection.',
+    },
+    'projects.blockchain.date': { fr: '2026', en: '2026' },
+    'projects.abandoned': { fr: '⚠️ Abandonné', en: '⚠️ Abandoned' },
 
     // Project Detail
     'projectDetail.about': { fr: 'À propos du projet', en: 'About the project' },
@@ -295,8 +322,8 @@ export class TranslationService {
       en: 'I am Andrea Mancion, a passionate Data Science and AI student at EPITECH. Fascinated by the potential of artificial intelligence and machine learning, I develop innovative projects that combine creativity and technology.',
     },
     'aboutDetail.personalInfo': {
-      fr: "J'ai 22 ans, né le 19 janvier 2003 à Brest, en Bretagne. Passionné par l'intelligence artificielle depuis mon adolescence, j'ai transformé cette passion en parcours académique et professionnel.",
-      en: 'I am 22 years old, born on January 19, 2003 in Brest, Brittany. Passionate about artificial intelligence since my adolescence, I have transformed this passion into an academic and professional path.',
+      fr: "J'ai 23 ans, né le 19 janvier 2003 à Brest, en Bretagne. Passionné par l'intelligence artificielle depuis mon adolescence, j'ai transformé cette passion en parcours académique et professionnel.",
+      en: 'I am 23 years old, born on January 19, 2003 in Brest, Brittany. Passionate about artificial intelligence since my adolescence, I have transformed this passion into an academic and professional path.',
     },
     'aboutDetail.passion': { fr: 'Ma Passion', en: 'My Passion' },
     'aboutDetail.passionText': {

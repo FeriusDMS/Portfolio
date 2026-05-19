@@ -17,6 +17,11 @@
             <span class="project-type-badge">
               {{ project.type === 'personal' ? '🚀 ' + translate.translate('projects.personal') : '📚 ' + translate.translate('projects.academic') }}
             </span>
+            @if (project.abandoned) {
+              <span class="project-abandoned-badge">
+                ⚠️ {{ translate.translate('projects.abandoned') }}
+              </span>
+            }
           </div>
         </div>
         

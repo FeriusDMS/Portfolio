@@ -11,6 +11,7 @@ interface Project {
   github?: string;
   demo?: string;
   type: 'personal' | 'academic';
+  abandoned?: boolean;
 }
 
 @Component({
@@ -95,6 +96,15 @@ export class Projects {
         image: 'assets/Zappy.png',
         github: 'https://github.com/FeriusDMS/Zappy',
         type: 'academic'
+      },
+      {
+        title: this.translate.translate('projects.blockchain.title'),
+        description: this.translate.translate('projects.blockchain.desc'),
+        technologies: ['TypeScript', 'Solidity', 'Blockchain', 'Ethereum'],
+        image: 'assets/Blockchain.png',
+        github: 'https://github.com/FeriusDMS/Blockchain',
+        type: 'academic',
+        abandoned: true
       },
     ];
   }
