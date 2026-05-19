@@ -1,18 +1,15 @@
-import { Component, signal, ViewChild } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslationService } from '../../services/translation.service';
 import { CommonModule } from '@angular/common';
-import { PatchNotesComponent } from '../patch-notes/patch-notes';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, CommonModule, PatchNotesComponent],
+  imports: [RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
-  @ViewChild(PatchNotesComponent) patchNotesComponent!: PatchNotesComponent;
-
   menuActive = signal(false);
   showCopyToast = signal(false);
   showShareModal = signal(false);
@@ -30,11 +27,6 @@ export class Header {
   toggleLanguage() {
     const newLang = this.translate.currentLang() === 'fr' ? 'en' : 'fr';
     this.translate.setLanguage(newLang);
-    this.closeMenu();
-  }
-
-  openPatchNotes() {
-    this.patchNotesComponent.openModal();
     this.closeMenu();
   }
 

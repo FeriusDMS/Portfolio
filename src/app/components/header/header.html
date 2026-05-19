@@ -44,26 +44,6 @@
           </button>
         </li>
         <li class="share-btn-mobile">
-          <button (click)="openPatchNotes()" class="patch-notes-btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              width="20"
-              height="20"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            <span>{{ translate.translate('nav.patchNotes') }}</span>
-          </button>
-        </li>
-        <li class="share-btn-mobile">
           <button (click)="shareWebsite()" class="share-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,29 +66,6 @@
       </ul>
 
       <div class="nav-actions">
-        <button
-          (click)="openPatchNotes()"
-          class="patch-notes-btn-desktop"
-          title="{{ translate.translate('nav.patchNotes') }}"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            width="20"
-            height="20"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-            />
-          </svg>
-          <span class="patch-notes-text">{{ translate.translate('nav.patchNotes') }}</span>
-        </button>
-
         <button
           (click)="shareWebsite()"
           class="share-btn-desktop"
@@ -256,6 +213,3 @@
   </div>
 </div>
 }
-
-<!-- Patch Notes Component -->
-<app-patch-notes></app-patch-notes>
