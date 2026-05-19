@@ -13,3 +13,4 @@ export class PatchNotes {
   readonly patchNotes = patchNotes;
 
   constructor(public translate: TranslationService) {}
+}
