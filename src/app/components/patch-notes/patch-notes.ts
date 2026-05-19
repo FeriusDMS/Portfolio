@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { patchNotes } from '../../generated/patch-notes.generated';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-patch-notes',
@@ -10,4 +11,5 @@ import { patchNotes } from '../../generated/patch-notes.generated';
 })
 export class PatchNotes {
   readonly patchNotes = patchNotes;
-}
+
+  constructor(public translate: TranslationService) {}

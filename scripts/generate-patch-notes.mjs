@@ -72,56 +72,41 @@ function collectChangedFiles(range) {
   return output ? output.split('\n').filter(Boolean) : [];
 }
 
-function buildHighlights(files) {
+function buildHighlightsFromCommits(commits) {
   const highlights = new Set();
 
-  for (const file of files) {
-    const normalized = file.replace(/\\/g, '/');
+  for (const commit of commits) {
+    const subject = commit.subject.toUpperCase();
 
-    if (normalized.startsWith('.github/workflows/')) {
-      highlights.add('Automatisation du déploiement et du build renforcée.');
-      continue;
+    if (subject.includes('FIX') || subject.includes('CORRECTIF')) {
+      if (subject.includes('COMPIL')) {
+        highlights.add('Correction d\'un problème de compilation du projet.');
+      } else if (subject.includes('ERROR') || subject.includes('ERREUR')) {
+        highlights.add('Correction d\'erreurs et stabilisation du code.');
+      } else {
+        highlights.add('Corrections et améliorations du code existant.');
+      }
+    } else if (subject.includes('FEAT') || subject.includes('FEATURE') || subject.includes('AJOUT')) {
+      if (subject.includes('PATCH')) {
+        highlights.add('Intégration du système automatique de patch notes.');
+      } else if (subject.includes('BUTTON') || subject.includes('BOUTON')) {
+        highlights.add('Ajout de nouveaux éléments d\'interface utilisateur.');
+      } else {
+        highlights.add('Nouvelles fonctionnalités et améliorations ajoutées.');
+      }
+    } else if (subject.includes('REFACTOR') || subject.includes('REFONTE')) {
+      highlights.add('Restructuration et optimisation du code.');
+    } else if (subject.includes('MERGE') || subject.includes('PULL')) {
+      highlights.add('Intégration de modifications depuis les branches de développement.');
+    } else {
+      const shortSubject = commit.subject.split('(')[0].trim();
+      if (shortSubject.length > 10) {
+        highlights.add(shortSubject.charAt(0).toUpperCase() + shortSubject.slice(1) + '.');
+      }
     }
-
-    if (normalized.startsWith('src/app/generated/')) {
-      highlights.add('Le patch note du site a été régénéré automatiquement.');
-      continue;
-    }
-
-    if (normalized.startsWith('src/app/components/')) {
-      highlights.add('Un ou plusieurs composants du portfolio ont été mis à jour.');
-      continue;
-    }
-
-    if (normalized.startsWith('src/app/pages/')) {
-      highlights.add('Une page du site a évolué pour afficher les nouvelles informations.');
-      continue;
-    }
-
-    if (normalized.startsWith('src/app/services/')) {
-      highlights.add('La logique métier et les services applicatifs ont été ajustés.');
-      continue;
-    }
-
-    if (normalized.startsWith('src/assets/') || normalized.startsWith('public/')) {
-      highlights.add('Des ressources visuelles ou statiques ont été actualisées.');
-      continue;
-    }
-
-    if (normalized === 'package.json' || normalized === 'package-lock.json') {
-      highlights.add('Les scripts ou dépendances du projet ont été mis à jour.');
-      continue;
-    }
-
-    if (normalized.endsWith('.html') || normalized.endsWith('.scss') || normalized.endsWith('.ts')) {
-      highlights.add("Des ajustements d'interface et de comportement ont été appliqués.");
-      continue;
-    }
-
-    highlights.add('Modifications de code et de configuration appliquées au site.');
   }
 
-  return [...highlights];
+  return [...highlights].slice(0, 5);
 }
 
 function createPatchNotes(range, commits, files) {
@@ -131,7 +116,7 @@ function createPatchNotes(range, commits, files) {
     timeStyle: 'short',
   }).format(new Date(generatedAt));
 
-  const highlights = buildHighlights(files);
+  const highlights = buildHighlightsFromCommits(commits);
   const commitCount = commits.length;
   const fileCount = files.length;
 

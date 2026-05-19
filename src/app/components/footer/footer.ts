@@ -29,4 +29,12 @@ export class Footer {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  scrollToPatchNotes(event: Event) {
+    event.preventDefault();
+    const element = document.getElementById('patch-notes');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

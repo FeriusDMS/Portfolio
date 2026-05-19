@@ -26,6 +26,9 @@
           <li>
             <a routerLink="/contact">{{ translate.translate('nav.contact') }}</a>
           </li>
+          <li>
+            <a (click)="scrollToPatchNotes($event)" style="cursor: pointer">{{ translate.translate('nav.patchNotes') }}</a>
+          </li>
         </ul>
       </div>
 
