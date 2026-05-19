@@ -24,6 +24,14 @@ export class Header {
     this.menuActive.set(false);
   }
 
+  scrollToPatchNotes() {
+    const element = document.getElementById('patch-notes');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    this.closeMenu();
+  }
+
   toggleLanguage() {
     const newLang = this.translate.currentLang() === 'fr' ? 'en' : 'fr';
     this.translate.setLanguage(newLang);

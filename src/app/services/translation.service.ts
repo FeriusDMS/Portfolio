@@ -25,13 +25,16 @@ export class TranslationService {
     'nav.share': { fr: 'Partager', en: 'Share' },
     'nav.linkCopied': { fr: 'Lien copié !', en: 'Link copied!' },
     'nav.discord': { fr: 'Discord', en: 'Discord' },
-    'nav.patchNotes': { fr: 'Notes de version', en: 'Patch Notes' },
+    'nav.patchNotes': { fr: 'Patch Notes', en: 'Patch Notes' },
 
     // Patch Notes
-    'patchNotes.title': { fr: 'Notes de Version', en: 'Patch Notes' },
-    'patchNotes.currentVersion': { fr: 'Version actuelle', en: 'Current version' },
+    'patchNotes.title': { fr: 'Patch Notes', en: 'Patch Notes' },
+    'patchNotes.subtitle': { fr: 'Résumé du dernier push sur main, affiché directement sur le site.', en: 'Summary of the latest push to main, displayed directly on the site.' },
+    'patchNotes.currentVersion': { fr: 'Dernière version', en: 'Latest version' },
     'patchNotes.version': { fr: 'Version', en: 'Version' },
-    'patchNotes.latest': { fr: 'Dernière', en: 'Latest' },
+    'patchNotes.whatChanged': { fr: 'Ce qui a changé', en: 'What changed' },
+    'patchNotes.commits': { fr: 'Commits inclus', en: 'Included commits' },
+    'patchNotes.highlights': { fr: 'points clés', en: 'highlights' },
 
     // Share Modal
     'share.title': { fr: 'Partager mon portfolio', en: 'Share my portfolio' },
