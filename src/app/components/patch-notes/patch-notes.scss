@@ -1,0 +1,153 @@
+.patch-notes {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.92), rgba(15, 23, 42, 1));
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+}
+
+.patch-card {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.76));
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
+}
+
+.patch-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), transparent 55%);
+  pointer-events: none;
+}
+
+.patch-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+}
+
+.patch-card__eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #60a5fa;
+  margin-bottom: 0.35rem;
+}
+
+.patch-card__date {
+  flex-shrink: 0;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.14);
+  color: #bfdbfe;
+  font-size: 0.9rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.patch-card__summary {
+  color: #cbd5e1;
+  font-size: 1.02rem;
+  margin-bottom: 1.5rem;
+}
+
+.patch-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.patch-stat {
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  text-align: center;
+
+  span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f8fafc;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  small {
+    color: #94a3b8;
+    font-size: 0.88rem;
+  }
+}
+
+.patch-card__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.patch-card__section {
+  h4 {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  li {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    color: #cbd5e1;
+    line-height: 1.55;
+  }
+
+  li::before {
+    content: '•';
+    color: #60a5fa;
+    font-weight: 700;
+    margin-top: 0.05rem;
+  }
+}
+
+.commit-hash {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  font-size: 0.82rem;
+  font-family: monospace;
+  flex-shrink: 0;
+}

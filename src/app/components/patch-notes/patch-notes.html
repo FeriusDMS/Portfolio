@@ -1,0 +1,53 @@
+<section class="section patch-notes" id="patch-notes">
+  <div class="container">
+    <h2 class="section-title">Patch Notes</h2>
+    <p class="section-subtitle">Résumé du dernier push sur main, affiché directement sur le site.</p>
+
+    <article class="patch-card">
+      <div class="patch-card__header">
+        <div>
+          <p class="patch-card__eyebrow">Dernière version</p>
+          <h3>{{ patchNotes.title }}</h3>
+        </div>
+
+        <span class="patch-card__date">{{ patchNotes.generatedAtLabel }}</span>
+      </div>
+
+      <p class="patch-card__summary">{{ patchNotes.summary }}</p>
+
+      <div class="patch-card__stats">
+        <div class="patch-stat">
+          <span>{{ patchNotes.commitCount }}</span>
+          <small>commit(s)</small>
+        </div>
+        <div class="patch-stat">
+          <span>{{ patchNotes.fileCount }}</span>
+          <small>fichier(s)</small>
+        </div>
+        <div class="patch-stat">
+          <span>{{ patchNotes.highlights.length }}</span>
+          <small>points clés</small>
+        </div>
+      </div>
+
+      <div class="patch-card__content">
+        <div class="patch-card__section">
+          <h4>Ce qui a changé</h4>
+          <ul>
+            <li *ngFor="let item of patchNotes.highlights">{{ item }}</li>
+          </ul>
+        </div>
+
+        <div class="patch-card__section" *ngIf="patchNotes.commits.length">
+          <h4>Commits inclus</h4>
+          <ul>
+            <li *ngFor="let commit of patchNotes.commits">
+              <span class="commit-hash">{{ commit.hash }}</span>
+              <span>{{ commit.subject }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
