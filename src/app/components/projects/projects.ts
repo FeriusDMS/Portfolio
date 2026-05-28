@@ -114,7 +114,6 @@ export class Projects {
         image: 'assets/searchMonster.jpg',
         github: 'https://github.com/FeriusDMS/MonstersMap',
         type: 'personal',
-        WIP: true
       },
     ];
   }
