@@ -9,6 +9,8 @@ type LocalizedText = {
   en: string;
 };
 
+type TranslatableText = string | LocalizedText;
+
 @Component({
   selector: 'app-patch-notes',
   imports: [CommonModule],
@@ -23,7 +25,11 @@ export class PatchNotes {
     public modal: PatchNotesModalService
   ) {}
 
-  t(value: LocalizedText) {
+  t(value: TranslatableText) {
+    if (typeof value === 'string') {
+      return value;
+    }
+
     return value[this.translate.currentLang()];
   }
 
