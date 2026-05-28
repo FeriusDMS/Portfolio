@@ -12,6 +12,7 @@ interface Project {
   demo?: string;
   type: 'personal' | 'academic';
   abandoned?: boolean;
+  WIP?: boolean;
 }
 
 @Component({
@@ -105,6 +106,14 @@ export class Projects {
         github: 'https://github.com/FeriusDMS/Blockchain',
         type: 'academic',
         abandoned: true
+      },
+      {
+        title: this.translate.translate('projects.searchmonster.title'),
+        description: this.translate.translate('projects.searchmonster.desc'),
+        technologies: ['C#', 'Game Modding', 'FFXIV', 'Dalamud'],
+        image: 'assets/searchMonster.jpg',
+        github: 'https://github.com/FeriusDMS/MonstersMap',
+        type: 'personal',
       },
     ];
   }

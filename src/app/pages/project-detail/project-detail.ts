@@ -17,6 +17,7 @@ interface Project {
   demoVideo?: string;
   type: 'personal' | 'academic';
   abandoned?: boolean;
+  WIP?: boolean;
 }
 
 @Component({
@@ -175,6 +176,18 @@ export class ProjectDetail implements OnInit {
         type: 'academic',
         abandoned: true
       },
+      {
+        titleKey: 'projects.searchmonster.title',
+        descriptionKey: 'projects.searchmonster.desc',
+        objectiveKey: 'projects.searchmonster.objective',
+        challengesKey: 'projects.searchmonster.challenges',
+        resultsKey: 'projects.searchmonster.results',
+        dateKey: 'projects.searchmonster.date',
+        technologies: ['C#', 'Game Modding', 'FFXIV', 'Dalamud'],
+        image: 'assets/searchMonster.jpg',
+        github: 'https://github.com/FeriusDMS/MonstersMap',
+        type: 'personal',
+      }
     ];
   }
 }

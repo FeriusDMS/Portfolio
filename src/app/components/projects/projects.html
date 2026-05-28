@@ -14,6 +14,9 @@
               @if (project.abandoned) {
                 <span class="project-abandoned">⚠️ {{ translate.translate('projects.abandoned') }}</span>
               }
+              @if (project.WIP) {
+                <span class="project-abandoned">🚧 {{ translate.translate('projects.wip') }}</span>
+              }
             </div>
           </div>
           
