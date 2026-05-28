@@ -1,53 +1,63 @@
-<section class="section patch-notes" id="patch-notes">
-  <div class="container">
-    <h2 class="section-title">{{ translate.translate('patchNotes.title') }}</h2>
-    <p class="section-subtitle">{{ translate.translate('patchNotes.subtitle') }}</p>
-
-    <article class="patch-card">
-      <div class="patch-card__header">
-        <div>
-          <p class="patch-card__eyebrow">{{ translate.translate('patchNotes.currentVersion') }}</p>
-          <h3>{{ patchNotes.title }}</h3>
-        </div>
-
-        <span class="patch-card__date">{{ patchNotes.generatedAtLabel }}</span>
+@if (modal.isOpen()) {
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="patch-modal" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <div>
+        <p class="patch-modal__eyebrow">{{ translate.translate('patchNotes.currentVersion') }}</p>
+        <h3>{{ t(patchNotes.title) }}</h3>
       </div>
 
-      <p class="patch-card__summary">{{ patchNotes.summary }}</p>
+      <button class="close-btn" type="button" (click)="closeModal()" [attr.aria-label]="translate.translate('patchNotes.close')">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
 
-      <div class="patch-card__stats">
+    <div class="modal-body">
+      <p class="patch-modal__subtitle">{{ translate.translate('patchNotes.subtitle') }}</p>
+
+      <div class="patch-modal__meta">
+        <span class="patch-modal__date">{{ formatGeneratedAt() }}</span>
+        <span class="patch-modal__range">{{ patchNotes.range.from }} → {{ patchNotes.range.to }}</span>
+      </div>
+
+      <p class="patch-modal__summary">{{ t(patchNotes.summary) }}</p>
+
+      <div class="patch-modal__stats">
         <div class="patch-stat">
           <span>{{ patchNotes.commitCount }}</span>
-          <small>commit(s)</small>
+          <small>{{ translate.translate('patchNotes.commitLabel') }}</small>
         </div>
         <div class="patch-stat">
           <span>{{ patchNotes.fileCount }}</span>
-          <small>fichier(s)</small>
+          <small>{{ translate.translate('patchNotes.fileLabel') }}</small>
         </div>
         <div class="patch-stat">
           <span>{{ patchNotes.highlights.length }}</span>
-          <small>{{ translate.translate('patchNotes.highlights') || 'points clés' }}</small>
+          <small>{{ translate.translate('patchNotes.highlights') }}</small>
         </div>
       </div>
 
-      <div class="patch-card__content">
-        <div class="patch-card__section">
+      <div class="patch-modal__content">
+        <div class="patch-modal__section">
           <h4>{{ translate.translate('patchNotes.whatChanged') }}</h4>
           <ul>
-            <li *ngFor="let item of patchNotes.highlights">{{ item }}</li>
+            <li *ngFor="let item of patchNotes.highlights">{{ t(item) }}</li>
           </ul>
         </div>
 
-        <div class="patch-card__section" *ngIf="patchNotes.commits.length">
+        <div class="patch-modal__section" *ngIf="patchNotes.commits.length">
           <h4>{{ translate.translate('patchNotes.commits') }}</h4>
           <ul>
             <li *ngFor="let commit of patchNotes.commits">
               <span class="commit-hash">{{ commit.hash }}</span>
-              <span>{{ commit.subject }}</span>
+              <span>{{ t(commit.subject) }}</span>
             </li>
           </ul>
         </div>
       </div>
-    </article>
+    </div>
   </div>
-</section>
+</div>
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslationService } from '../../services/translation.service';
+import { PatchNotesModalService } from '../../services/patch-notes-modal.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,7 +14,8 @@ export class Footer {
   
   constructor(
     public translate: TranslationService,
-    private router: Router
+    private router: Router,
+    private patchNotesModal: PatchNotesModalService
   ) {}
 
   scrollToTop(event?: Event) {
@@ -30,11 +32,8 @@ export class Footer {
     });
   }
 
-  scrollToPatchNotes(event: Event) {
+  openPatchNotes(event: Event) {
     event.preventDefault();
-    const element = document.getElementById('patch-notes');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    this.patchNotesModal.open();
   }
 }

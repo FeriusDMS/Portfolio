@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslationService } from '../../services/translation.service';
 import { CommonModule } from '@angular/common';
+import { PatchNotesModalService } from '../../services/patch-notes-modal.service';
 
 @Component({
   selector: 'app-header',
@@ -14,8 +15,6 @@ export class Header {
   showCopyToast = signal(false);
   showShareModal = signal(false);
 
-  constructor(public translate: TranslationService) {}
-
   toggleMenu() {
     this.menuActive.set(!this.menuActive());
   }
@@ -24,11 +23,13 @@ export class Header {
     this.menuActive.set(false);
   }
 
-  scrollToPatchNotes() {
-    const element = document.getElementById('patch-notes');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  constructor(
+    public translate: TranslationService,
+    private patchNotesModal: PatchNotesModalService
+  ) {}
+
+  openPatchNotes() {
+    this.patchNotesModal.open();
     this.closeMenu();
   }
 
