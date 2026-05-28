@@ -300,7 +300,26 @@ export class TranslationService {
       en: 'Complete platform with smart contracts deployed on Sepolia testnet, WATCH token system with 1M supply, NFTs with rich metadata (brand, model, valuation), Uniswap V3 pools WATCH/USDC and WATCH/WETH, backend with event indexing (<1min latency), price oracle for valuations, responsive frontend with wallet connection.',
     },
     'projects.blockchain.date': { fr: '2026', en: '2026' },
+    'projects.searchmonster.title': { fr: 'Monster Map - Mod FFXIV', en: 'MonsterMap - FFXIV Mod' },
+    'projects.searchmonster.desc': {
+      fr: "Plugin Dalamud pour Final Fantasy XIV qui permet de montrer sur la carte l'emplacement des monstres choisis.",
+      en: 'Dalamud plugin for Final Fantasy XIV that allows showing on the map the location of chosen monsters.',
+    },
+    'projects.searchmonster.objective': {
+      fr: "Créer un plugin pour FFXIV qui affiche sur la carte l'emplacement des monstres choisis par le joueur, avec des fonctionnalités de filtrage et de personnalisation pour améliorer l'expérience de jeu.",
+      en: 'Create a plugin for FFXIV that displays on the map the location of monsters chosen by the player, with filtering and customization features to enhance the gaming experience.',
+    },
+    'projects.searchmonster.challenges': {
+      fr: "Intégration avec l'API Dalamud, gestion de la mémoire du jeu",
+      en: 'Integration with Dalamud API, game memory management',
+    },
+    'projects.searchmonster.results': {
+      fr: "Plugin fonctionnel, support multi-langues. Performance optimisée avec < 1% d'impact sur le FPS.",
+      en: 'Functional plugin, multi-language support. Optimized performance with < 1% FPS impact.',
+    },
+    'projects.searchmonster.date': { fr: '2026', en: '2026' },
     'projects.abandoned': { fr: '⚠️ Abandonné', en: '⚠️ Abandoned' },
+    'projects.wip': { fr: '🚧 En cours', en: '🚧 In Progress' },
 
     // Project Detail
     'projectDetail.about': { fr: 'À propos du projet', en: 'About the project' },
