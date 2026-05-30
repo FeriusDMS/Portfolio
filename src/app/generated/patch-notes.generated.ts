@@ -1,34 +1,31 @@
 /* eslint-disable */
 export const patchNotes = {
-  title: { fr: 'Patch note automatique', en: 'Automatic patch note' },
-  generatedAt: '2026-05-19T00:00:00.000Z',
-  range: {
-    from: 'HEAD~1',
-    to: 'HEAD',
+  "title": {
+    "fr": "Patch note automatique",
+    "en": "Automatic patch note"
   },
-  summary: {
-    fr: 'Le patch note sera régénéré automatiquement lors du prochain push sur main.',
-    en: 'The patch note will be regenerated automatically on the next push to main.',
+  "generatedAt": "2026-05-30T10:28:14.079Z",
+  "generatedAtLabel": "30 mai 2026 à 12:28",
+  "range": {
+    "from": "HEAD~1",
+    "to": "HEAD"
   },
-  highlights: [
+  "summary": {
+    "fr": "1 commit(s) ont modifié 1 fichier(s).",
+    "en": "1 commit(s) changed 1 file(s)."
+  },
+  "highlights": [
     {
-      fr: "Intégration d'un bloc patch note affiché directement sur le site.",
-      en: 'Integration of a patch notes block displayed directly on the website.',
-    },
-    {
-      fr: 'Automatisation prévue via GitHub Actions au moment du push sur main.',
-      en: 'Automation planned through GitHub Actions when pushing to main.',
-    },
+      "fr": "Corrections et améliorations du code existant.",
+      "en": "Fixes and improvements to the existing code."
+    }
   ],
-  commits: [
+  "commits": [
     {
-      hash: 'local',
-      subject: {
-        fr: 'Patch note de secours pour le développement local',
-        en: 'Fallback patch notes for local development',
-      },
-    },
+      "hash": "5cca36c",
+      "subject": "FIX(Build): fix issue with the build"
+    }
   ],
-  commitCount: 1,
-  fileCount: 0,
+  "commitCount": 1,
+  "fileCount": 1
 } as const;
