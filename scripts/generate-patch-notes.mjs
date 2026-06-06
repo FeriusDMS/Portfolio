@@ -4,6 +4,10 @@ import { dirname, resolve } from 'node:path';
 
 const zeroShaPattern = /^0+$/;
 
+function localized(fr, en) {
+  return { fr, en };
+}
+
 function runGit(args) {
   try {
     return execFileSync('git', args, {
@@ -33,9 +37,10 @@ function resolveRange() {
 
 function collectCommitData(range) {
   const format = '%h\t%s';
-  const command = range.from === range.to
-    ? ['log', '-1', `--format=${format}`, range.to]
-    : ['log', `--format=${format}`, `${range.from}..${range.to}`];
+  const command =
+    range.from === range.to
+      ? ['log', '-1', `--format=${format}`, range.to]
+      : ['log', `--format=${format}`, `${range.from}..${range.to}`];
 
   const output = runGit(command);
 
@@ -61,13 +66,7 @@ function collectChangedFiles(range) {
     return [];
   }
 
-  const output = runGit([
-    'diff',
-    '--name-only',
-    '--diff-filter=ACMR',
-    range.from,
-    range.to,
-  ]);
+  const output = runGit(['diff', '--name-only', '--diff-filter=ACMR', range.from, range.to]);
 
   return output ? output.split('\n').filter(Boolean) : [];
 }
@@ -80,33 +79,94 @@ function buildHighlightsFromCommits(commits) {
 
     if (subject.includes('FIX') || subject.includes('CORRECTIF')) {
       if (subject.includes('COMPIL')) {
-        highlights.add('Correction d\'un problème de compilation du projet.');
+        highlights.add(
+          JSON.stringify(
+            localized(
+              "Correction d'un problème de compilation du projet.",
+              'Fixed a project compilation issue.'
+            )
+          )
+        );
       } else if (subject.includes('ERROR') || subject.includes('ERREUR')) {
-        highlights.add('Correction d\'erreurs et stabilisation du code.');
+        highlights.add(
+          JSON.stringify(
+            localized(
+              "Correction d'erreurs et stabilisation du code.",
+              'Fixed errors and stabilized the code.'
+            )
+          )
+        );
       } else {
-        highlights.add('Corrections et améliorations du code existant.');
+        highlights.add(
+          JSON.stringify(
+            localized(
+              'Corrections et améliorations du code existant.',
+              'Fixes and improvements to the existing code.'
+            )
+          )
+        );
       }
-    } else if (subject.includes('FEAT') || subject.includes('FEATURE') || subject.includes('AJOUT')) {
+    } else if (
+      subject.includes('FEAT') ||
+      subject.includes('FEATURE') ||
+      subject.includes('AJOUT')
+    ) {
       if (subject.includes('PATCH')) {
-        highlights.add('Intégration du système automatique de patch notes.');
+        highlights.add(
+          JSON.stringify(
+            localized(
+              'Intégration du système automatique de patch notes.',
+              'Integration of the automatic patch notes system.'
+            )
+          )
+        );
       } else if (subject.includes('BUTTON') || subject.includes('BOUTON')) {
-        highlights.add('Ajout de nouveaux éléments d\'interface utilisateur.');
+        highlights.add(
+          JSON.stringify(
+            localized(
+              "Ajout de nouveaux éléments d'interface utilisateur.",
+              'Added new user interface elements.'
+            )
+          )
+        );
       } else {
-        highlights.add('Nouvelles fonctionnalités et améliorations ajoutées.');
+        highlights.add(
+          JSON.stringify(
+            localized(
+              'Nouvelles fonctionnalités et améliorations ajoutées.',
+              'New features and improvements added.'
+            )
+          )
+        );
       }
     } else if (subject.includes('REFACTOR') || subject.includes('REFONTE')) {
-      highlights.add('Restructuration et optimisation du code.');
+      highlights.add(
+        JSON.stringify(
+          localized(
+            'Restructuration et optimisation du code.',
+            'Code restructuring and optimization.'
+          )
+        )
+      );
     } else if (subject.includes('MERGE') || subject.includes('PULL')) {
-      highlights.add('Intégration de modifications depuis les branches de développement.');
+      highlights.add(
+        JSON.stringify(
+          localized(
+            'Intégration de modifications depuis les branches de développement.',
+            'Integrated changes from development branches.'
+          )
+        )
+      );
     } else {
       const shortSubject = commit.subject.split('(')[0].trim();
       if (shortSubject.length > 10) {
-        highlights.add(shortSubject.charAt(0).toUpperCase() + shortSubject.slice(1) + '.');
+        const formattedSubject = shortSubject.charAt(0).toUpperCase() + shortSubject.slice(1) + '.';
+        highlights.add(JSON.stringify(localized(formattedSubject, formattedSubject)));
       }
     }
   }
 
-  return [...highlights].slice(0, 5);
+  return [...highlights].slice(0, 5).map((item) => JSON.parse(item));
 }
 
 function createPatchNotes(range, commits, files) {
@@ -121,7 +181,7 @@ function createPatchNotes(range, commits, files) {
   const fileCount = files.length;
 
   return {
-    title: 'Patch note automatique',
+    title: localized('Patch note automatique', 'Automatic patch note'),
     generatedAt,
     generatedAtLabel,
     range: {
@@ -130,9 +190,23 @@ function createPatchNotes(range, commits, files) {
     },
     summary:
       commitCount === 0
-        ? 'Aucune modification détectée pour ce déploiement.'
-        : `${commitCount} commit(s) ont modifié ${fileCount} fichier(s).`,
-    highlights: highlights.length > 0 ? highlights : ["Aucun détail spécifique n'a été détecté dans ce push."],
+        ? localized(
+            'Aucune modification détectée pour ce déploiement.',
+            'No changes were detected for this deployment.'
+          )
+        : localized(
+            `${commitCount} commit(s) ont modifié ${fileCount} fichier(s).`,
+            `${commitCount} commit(s) changed ${fileCount} file(s).`
+          ),
+    highlights:
+      highlights.length > 0
+        ? highlights
+        : [
+            localized(
+              "Aucun détail spécifique n'a été détecté dans ce push.",
+              'No specific details were detected in this push.'
+            ),
+          ],
     commits,
     commitCount,
     fileCount,
@@ -140,7 +214,11 @@ function createPatchNotes(range, commits, files) {
 }
 
 function createSourceFile(patchNotes) {
-  return `/* eslint-disable */\nexport const patchNotes = ${JSON.stringify(patchNotes, null, 2)} as const;\n`;
+  return `/* eslint-disable */\nexport const patchNotes = ${JSON.stringify(
+    patchNotes,
+    null,
+    2
+  )} as const;\n`;
 }
 
 const range = resolveRange();

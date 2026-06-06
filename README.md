@@ -1,59 +1,36 @@
 # Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Personal portfolio built with Angular 21. The site is bilingual, responsive, and organized around a home page plus detailed pages for projects, studies, companies, and contact information.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Bilingual interface in French and English.
+- Main sections on the home page: hero, about, projects, skills, and contact.
+- Detail pages for projects, schools, companies, and about content.
+- Share modal in the header for copying or sharing the site link.
+- Patch notes panel that summarizes the latest changes deployed to `main`.
+- SSR-ready Angular app with an Express server entry point.
 
-```bash
-ng serve
-```
+## Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 21
+- TypeScript
+- SCSS
+- Angular SSR
+- Express
 
-## Code scaffolding
+## Routes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- `/` home page
+- `/about`
+- `/about/me`
+- `/schools/:id`
+- `/companies/:id`
+- `/projects`
+- `/projects/:id`
+- `/skills`
+- `/contact`
 
-```bash
-ng generate component component-name
-```
+## Deployment
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The app is configured with a base href of `/Portfolio/`, which matches the GitHub Pages deployment path.
