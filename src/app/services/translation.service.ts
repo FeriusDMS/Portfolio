@@ -321,6 +321,25 @@ export class TranslationService {
       en: 'Functional plugin, multi-language support. Optimized performance with < 1% FPS impact.',
     },
     'projects.searchmonster.date': { fr: '2026', en: '2026' },
+    'projects.trackmyjob.title': { fr: 'TrackMyJob', en: 'TrackMyJob' },
+    'projects.trackmyjob.desc': {
+      fr: 'Bot Discord automatisé qui surveille une boîte Gmail pour détecter les réponses aux candidatures et envoyer des notifications colorées par catégorie (refus, entretien, offre...).',
+      en: 'Automated Discord bot that monitors a Gmail inbox to detect job application responses and send color-coded notifications by category (rejection, interview, offer...).',
+    },
+    'projects.trackmyjob.objective': {
+      fr: "Automatiser le suivi des candidatures en analysant les emails Gmail entrants pour les classifier (refus, entretien, offre, accusé de réception) et envoyer des notifications Discord en temps réel, sans serveur et sans coût grâce à GitHub Actions.",
+      en: 'Automate job application tracking by analyzing incoming Gmail emails to classify them (rejection, interview, offer, acknowledgment) and send real-time Discord notifications, serverless and at no cost using GitHub Actions.',
+    },
+    'projects.trackmyjob.challenges': {
+      fr: "Mise en place de l'authentification OAuth 2.0 Google sans interaction utilisateur (refresh token), détection fiable des emails liés aux candidatures en français et anglais via des mots-clés contextuels, éviter les doublons de notifications en labellisant les emails traités, déploiement serverless via GitHub Actions avec cron.",
+      en: 'Setting up Google OAuth 2.0 authentication without user interaction (refresh token), reliable detection of job-related emails in French and English via contextual keywords, avoiding duplicate notifications by labeling processed emails, serverless deployment via GitHub Actions with cron.',
+    },
+    'projects.trackmyjob.results': {
+      fr: "Bot fonctionnel tournant toutes les 30 minutes via GitHub Actions, classification en 5 catégories avec notifications Discord colorées (rouge : refus, vert : entretien, or : offre, bleu : accusé, gris : inconnu), support bilingue FR/EN, zéro coût de serveur.",
+      en: 'Functional bot running every 30 minutes via GitHub Actions, classification into 5 categories with color-coded Discord notifications (red: rejection, green: interview, gold: offer, blue: acknowledgment, gray: unknown), bilingual FR/EN support, zero server cost.',
+    },
+    'projects.trackmyjob.date': { fr: '2026', en: '2026' },
+
     'projects.abandoned': { fr: '⚠️ Abandonné', en: '⚠️ Abandoned' },
     'projects.wip': { fr: '🚧 En cours', en: '🚧 In Progress' },
 
