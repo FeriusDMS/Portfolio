@@ -3,7 +3,6 @@ name: Auto merge DEV to main
 on:
   schedule:
     - cron: '0 3 * * 6'   # 05h00 CEST (été, UTC+2)
-    - cron: '0 4 * * 6'   # 05h00 CET  (hiver, UTC+1)
   workflow_dispatch:
 
 permissions:
