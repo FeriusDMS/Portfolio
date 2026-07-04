@@ -3,7 +3,6 @@ name: Auto merge DEV to main
 on:
   schedule:
     - cron: '0 3 * * 6'   # 05h00 CEST (été, UTC+2)
-    - cron: '0 4 * * 6'   # 05h00 CET  (hiver, UTC+1)
   workflow_dispatch:
 
 permissions:
@@ -80,4 +79,16 @@ jobs:
 
             core.info(`Pull request #${pr.number} merged successfully into main.`);
             core.setOutput('merged', 'true');
+
+      - name: Upload merge result
+        if: always()
+        run: echo "${{ steps.merge.outputs.merged }}" > merge-result.txt
+
+      - name: Upload merge result artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: merge-result
+          path: merge-result.txt
+          retention-days: 1
 

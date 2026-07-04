@@ -187,6 +187,18 @@ export class ProjectDetail implements OnInit {
         image: 'assets/searchMonster.jpg',
         github: 'https://github.com/FeriusDMS/MonstersMap',
         type: 'personal',
+      },
+      {
+        titleKey: 'projects.trackmyjob.title',
+        descriptionKey: 'projects.trackmyjob.desc',
+        objectiveKey: 'projects.trackmyjob.objective',
+        challengesKey: 'projects.trackmyjob.challenges',
+        resultsKey: 'projects.trackmyjob.results',
+        dateKey: 'projects.trackmyjob.date',
+        technologies: ['Python', 'Gmail API', 'Discord', 'GitHub Actions'],
+        image: 'assets/TrackMyJob.png',
+        github: 'https://github.com/FeriusDMS/TrackMyJob',
+        type: 'personal',
       }
     ];
   }

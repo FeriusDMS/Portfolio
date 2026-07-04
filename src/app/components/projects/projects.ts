@@ -115,6 +115,14 @@ export class Projects {
         github: 'https://github.com/FeriusDMS/MonstersMap',
         type: 'personal',
       },
+      {
+        title: this.translate.translate('projects.trackmyjob.title'),
+        description: this.translate.translate('projects.trackmyjob.desc'),
+        technologies: ['Python', 'Gmail API', 'Discord', 'GitHub Actions'],
+        image: 'assets/TrackMyJob.png',
+        github: 'https://github.com/FeriusDMS/TrackMyJob',
+        type: 'personal',
+      },
     ];
   }
 }
