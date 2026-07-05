@@ -2,19 +2,24 @@ name: Auto merge DEV to main
 
 on:
   schedule:
-    - cron: '0 3 * * 6'   # 05h00 CEST (été, UTC+2)
+    - cron: '0 3 * * 6'   # 05h00 CEST (été) / 04h00 CET (hiver)
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: auto-merge-dev-to-main
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  merge:
+  merge-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -80,15 +85,41 @@ jobs:
             core.info(`Pull request #${pr.number} merged successfully into main.`);
             core.setOutput('merged', 'true');
 
-      - name: Upload merge result
-        if: always()
-        run: echo "${{ steps.merge.outputs.merged }}" > merge-result.txt
+      - name: Pull main after merge
+        if: steps.merge.outputs.merged == 'true'
+        run: |
+          git fetch origin main
+          git checkout main
+          git pull origin main
 
-      - name: Upload merge result artifact
-        if: always()
-        uses: actions/upload-artifact@v4
+      - name: Setup Node
+        if: steps.merge.outputs.merged == 'true'
+        uses: actions/setup-node@v4
         with:
-          name: merge-result
-          path: merge-result.txt
-          retention-days: 1
+          node-version: '20'
 
+      - name: Install dependencies
+        if: steps.merge.outputs.merged == 'true'
+        run: npm install
+
+      - name: Generate patch notes
+        if: steps.merge.outputs.merged == 'true'
+        run: npm run generate:patch-notes
+        env:
+          PATCH_NOTES_FROM: ${{ github.sha }}
+          PATCH_NOTES_TO: ${{ github.sha }}
+
+      - name: Build
+        if: steps.merge.outputs.merged == 'true'
+        run: npm run build -- --configuration production --base-href /Portfolio/
+
+      - name: Upload pages artifact
+        if: steps.merge.outputs.merged == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist/portfolio/browser
+
+      - name: Deploy to GitHub Pages
+        if: steps.merge.outputs.merged == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
